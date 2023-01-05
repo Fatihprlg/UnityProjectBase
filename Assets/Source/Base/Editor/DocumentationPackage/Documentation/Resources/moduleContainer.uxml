@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:VisualElement style="width: auto; height: auto; border-top-left-radius: 10px; border-bottom-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; background-color: rgb(56, 56, 56); padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; flex-wrap: wrap; min-width: 350px; min-height: 300px; max-width: 350px; max-height: none;">
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="txtModuleName" style="-unity-text-align: middle-center; font-size: 14px;" />
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="txtModuleShortDesc" style="height: auto; flex-wrap: wrap; margin-left: 3px; margin-right: 3px; max-width: 100%; max-height: 100%; white-space: normal;" />
+        <ui:Button text="Read More..." display-tooltip-when-elided="true" name="btnReadMore" style="margin-left: 10px; margin-right: 10px; overflow: visible;" />
+    </ui:VisualElement>
+</ui:UXML>

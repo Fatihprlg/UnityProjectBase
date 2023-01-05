@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4f80a7f1215476e9d1f799228cc2c6, type: 3}
+  m_Name: Audios
+  m_EditorClassIdentifier: 
+  SFXs:
+  - id: 0
+    name: Confetti
+    clip: {fileID: 8300000, guid: adeab81ea79b644f5bdc5fc69a6f017e, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 1
+    name: Disabled
+    clip: {fileID: 8300000, guid: 2e30633e580944ec8bb87b47898f9ced, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 2
+    name: Enabled
+    clip: {fileID: 8300000, guid: fc10e0145dec54e209884312ee3e8e19, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 3
+    name: Fail
+    clip: {fileID: 8300000, guid: dc073996f47ef483680a62234abc095e, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 4
+    name: Pop
+    clip: {fileID: 8300000, guid: 9acc0ff430a6e45e58d17791d32bc9e1, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 5
+    name: Swoosh
+    clip: {fileID: 8300000, guid: 915d16ca67af9456d87048c706780b89, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 6
+    name: Tap
+    clip: {fileID: 8300000, guid: 598ffc0d795d24116af69235718eccf8, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 7
+    name: Unlock
+    clip: {fileID: 8300000, guid: a60ace3cad21940f5b749a25d849076b, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 8
+    name: Gems
+    clip: {fileID: 8300000, guid: 665ccc466854b49c7a157ef31c3707b5, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 9
+    name: Coin
+    clip: {fileID: 8300000, guid: e1980e73f40a54992a2b968a94ea06f2, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 10
+    name: Reach
+    clip: {fileID: 8300000, guid: 3edc7bf6fbc7549f49c0409611b9ac26, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 11
+    name: Spawn
+    clip: {fileID: 8300000, guid: 12b9cf097ea7243ecb7ecefa8ad71d9a, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 12
+    name: Tick
+    clip: {fileID: 8300000, guid: dc1082005e2ab46d58e63e82912c85bf, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 13
+    name: Up
+    clip: {fileID: 8300000, guid: 5a3d06b43e5de48918d77c7f9b7b93fc, type: 3}
+    volume: 1
+    pitch: 1
+  - id: 14
+    name: Down
+    clip: {fileID: 8300000, guid: 3967f2d9b75704caa8e5e0eb3e744ac8, type: 3}
+    volume: 1
+    pitch: 1
+  Musics: []

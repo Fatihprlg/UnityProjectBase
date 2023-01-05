@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Inversion Of Control
+  m_EditorClassIdentifier: 
+  moduleName: Inversion Of Control (IoC)
+  shortDescription: "Sahnedeki dependencyleri kontrol eden ve yerlerine inject eden
+    yap\u0131d\u0131r. kullan\u0131m\u0131 i\xE7in sahneye bir adet Context ve alt\u0131na
+    da MonoBuilder \xF6\u011Fesi eklenmelidir. Context objesi Initializer'\u0131n
+    en ba\u015F\u0131nda initialize edilmelidir."
+  fullDescription: "Dependency injection yapan bir container, sahnedeki dependencyleri
+    \xE7eken ve ileten builder yap\u0131s\u0131 ve builderlar\u0131 kontrol eden
+    bir Context yap\u0131s\u0131ndan olu\u015Fur. Kullan\u0131m\u0131 olduk\xE7a
+    basit tutulmu\u015Ftur. v1.0 versiyonunda yaln\u0131zca property ve field injection
+    bulunmaktad\u0131r. Bu \xF6zelli\u011Fi kullanabilmek i\xE7in \xF6ncelikle sahne
+    kurulumu yap\u0131mas\u0131 gereklidir. Sahneye Context objesi ve Builder objesi
+    eklenmelidir. Bu objeler \xF6rnek MainScene i\xE7erisinde bulunmaktad\u0131r.\n\n{0}\n\nBu
+    ad\u0131mdan sonra context sahnedeki builder'\u0131, builider da sahnedeki MonoBase
+    classlar\u0131 otomatik olarak her recompile oldu\u011Funda \xE7eker.\n\n{1}\n\nBu
+    ad\u0131mdan sonra kod i\xE7erisinde injection yapmak istedi\u011Finiz filed
+    ve propertylerin yan\u0131na [Dependency] attribute'unu eklemeniz gerekmektedir.
+    Bu ad\u0131mdan sonra ise kodu initialize etti\u011Finiz yerde veya dependency'i
+    kullanmadan \xF6nce this.Inject(); extension metodunu \xE7a\u011F\u0131rman\u0131z
+    yeterli olacakt\u0131r.\n\n{2}\n\nE\u011Fer bir sahnede bir nesne \xF6rne\u011Finden
+    birden fazla varsa ve siz spesifik birini \xE7ekmek istiyorsan\u0131z [Dependency(\"GameObje'nin
+    Ad\u0131\")] \u015Feklinde kullanabilirsiniz. Bunu yapmazsan\u0131z container
+    otomatik olarak ilk buldu\u011Fu objeyi injectleyecektir. \n\n{3}\n\n"
+  subPages: []
+  images:
+  - {fileID: 2800000, guid: 4a95ad2d33b804f859a634dc69ccef86, type: 3}
+  - {fileID: 2800000, guid: 0816c1a2efd87432a9939cd196685e70, type: 3}
+  - {fileID: 2800000, guid: 092e7c1cb355c45478bb091b01ea939e, type: 3}
+  - {fileID: 2800000, guid: 8f3fb1dc17eae4418ac72fee95d47ad3, type: 3}

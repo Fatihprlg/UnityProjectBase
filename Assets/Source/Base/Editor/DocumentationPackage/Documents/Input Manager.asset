@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Input Manager
+  m_EditorClassIdentifier: 
+  moduleName: Input Manager
+  shortDescription: "Objenin ald\u0131\u011F\u0131 pointer inputlar\u0131n\u0131
+    ve bu s\u0131rada ger\xE7ekle\u015Fecek olan eventleri y\xF6netir. pointer pozisyonlar\u0131n\u0131
+    ve delta bilgisini tutar. MonoBase De\u011Fildir."
+  fullDescription: "Input Manager kullan\u0131lmak istenen MonoBased obje i\xE7erisine
+    field olarak eklenir ve nesne \xF6rne\u011Fi olu\u015Fturulur([SerializeField]
+    olarak da kullan\u0131labilir). Buradan sonra objenin pointer ile ilgili yapca\u011F\u0131
+    b\xFCt\xFCn i\u015Flemleri bu objede ger\xE7ekle\u015Ftirebilirsiniz. OnPointer,
+    OnPointerDown ve OnPointerUp eventlerini kullanarak inputlar s\u0131ras\u0131nda
+    ger\xE7ekle\u015Fecek olaylar\u0131 belirleyebilirsiniz. \n\n{0}\n\n{1}\n\nPointer'\u0131n
+    ge\xE7erli konumu, bas\u0131ld\u0131\u011F\u0131 ve kald\u0131r\u0131ld\u0131\u011F\u0131
+    konu, delta bilgisi de bu s\u0131n\u0131f i\xE7erisinde tutulur. \xC7al\u0131\u015Fmas\u0131
+    i\xE7in istenilen ko\u015Fulda MonoBase bir class i\xE7erisinde Update fonksiyonunda
+    PointerUpdate() fonksiyonunun \xE7a\u011F\u0131r\u0131lmas\u0131 gerekmektedir.
+    \n\n{2}"
+  subPages: []
+  images:
+  - {fileID: 2800000, guid: 706762adee60740ca9358a836acc7131, type: 3}
+  - {fileID: 2800000, guid: 9f3fead3b11594352a1941f5a9e1dfbd, type: 3}
+  - {fileID: 2800000, guid: 03d19ebb31d5e4224a4a5206a4015e51, type: 3}

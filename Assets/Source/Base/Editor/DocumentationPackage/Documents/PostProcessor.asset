@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: PostProcessor
+  m_EditorClassIdentifier: 
+  moduleName: Post Processor
+  shortDescription: "Sahnedeki volume de\u011Ferlerini haz\u0131r post process ayarlar\u0131na
+    \xE7eken edit\xF6r scriptidir."
+  fullDescription: "PostProcessor componenti i\xE7erisinde iki adet profil bulundurur.
+    Bunlardan Classic olan standart ve basit bir g\xF6r\xFCnt\xFC elde etmenizi sa\u011Flar.
+    Contrast profili ise daha farkl\u0131 renk ayarlar\u0131 ve efektler i\xE7erir.
+    bunlardan birini se\xE7mek i\xE7in ismi yazan butona basman\u0131z yeterlidir.
+    PostProcessor otomatik olarak volume i\xE7erisine profili ekler. Buraya istenirse
+    custom profiller de eklenebilir. otomatik olarak eklenen profil buton \u015Feklinde
+    belirecektir. \n\n{0}\n\nProfil i\xE7erisinde ayar yaparken Color Lookup i\xE7erisindeki
+    lookup texture resmini de\u011Fi\u015Ftirerek farkl\u0131 g\xF6r\xFCt\xFCler
+    elde edebilirsiniz. Burada Assets/Base/CubePostProcess/Resources/LUT klas\xF6r\xFC
+    alt\u0131nda bulunan texturelardan se\xE7erek de\u011Fi\u015Fiklik yapabilir,
+    uygun g\xF6r\xFCnt\xFCy\xFC bulabilirsiniz."
+  subPages: []
+  images:
+  - {fileID: 2800000, guid: da175660522ac4dc3b3970d201329903, type: 3}

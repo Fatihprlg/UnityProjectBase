@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="moduleDescContainer" style="height: 100%; flex-direction: column; flex-shrink: 1; flex-wrap: wrap; justify-content: flex-start; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; background-color: rgb(41, 41, 41); display: flex; align-items: stretch; width: 100%; max-width: 100%; min-width: 100%; min-height: 100%; max-height: 100%; overflow: visible;">
+        <ui:Label text="Module Name" display-tooltip-when-elided="true" name="txtModuleName" style="-unity-text-align: middle-center; font-size: 16px;" />
+        <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" vertical-scroller-visibility="Auto" show-vertical-scroller="false" show-horizontal-scroller="false" focusable="false" mode="Vertical" horizontal-scroller-visibility="Hidden" touch-scroll-type="Clamped" usage-hints="None" name="scrollLongDesc" style="height: 90%; flex-direction: row; align-items: stretch; justify-content: space-between; position: relative; flex-basis: auto; flex-shrink: 1; flex-grow: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: auto; -unity-background-scale-mode: stretch-to-fill; flex-wrap: wrap; opacity: 1; min-width: 100%; min-height: 90%; visibility: visible; overflow: visible;">
+            <ui:VisualElement style="flex-direction: column; flex-wrap: wrap; width: 100%; justify-content: flex-start; height: 100%;">
+                <ui:Label text="" display-tooltip-when-elided="true" name="txtLongDesc" style="flex-wrap: wrap; white-space: normal;" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Particle Pool Model
+  m_EditorClassIdentifier: 
+  moduleName: Particle Pool Model
+  shortDescription: "particle objelerini i\xE7erisinde tutan pool objesi"
+  fullDescription: "Particle Pool Model, Pool Model s\u0131n\u0131f\u0131ndan miras
+    al\u0131p \xF6zelle\u015Fmi\u015F bir pooldur. i\xE7erisinde Particle Base Model
+    listesini tutar ve bu listedeki particlelar\u0131 oynatmak i\xE7in gerekli fonksiyonlar\u0131
+    i\xE7erir. Ayr\u0131ca child objelerindeki particle base model componentlerini
+    alacak bir metoda da sahiptir."
+  subPages: []
+  images: []

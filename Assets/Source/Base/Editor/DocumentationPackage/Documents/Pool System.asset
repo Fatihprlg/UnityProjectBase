@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Pool System
+  m_EditorClassIdentifier: 
+  moduleName: Pool Sistemi
+  shortDescription: "Template i\xE7erisinde bulunan poolar\u0131n y\xF6netimi ve
+    uygulanmas\u0131 i\xE7in gereken ad\u0131mlar. Multiple Pool Model, Pool Model
+    ve Pool i\xE7erisindeki objelerin tan\u0131mlar\u0131 ve a\xE7\u0131klamalar\u0131n\u0131
+    i\xE7erir.\n\n"
+  fullDescription: "Sahne hiyerar\u015Fisinde bulunan Pools objesini a\xE7arak var
+    olan poollara eri\u015Filebilir. Pool i\xE7erisinde Collectables, obstacles ve
+    PropPools olmak \xFCzere \xFC\xE7 adet MultiplePoolModel i\xE7erir. Ayr\u0131ca
+    b\xFCt\xFCn poollar\u0131 initialize etmek i\xE7in InitializeAllPools scriptini
+    tutar. Bu script Pools objesinin child'\u0131 olarak bulunan b\xFCt\xFCn poollar\u0131
+    tek bir yerden initialize etmek i\xE7in kullan\u0131l\u0131r. \n\n{0}\n\nMultiplePoolModel
+    i\xE7erisinde birden fazla pool bar\u0131nd\u0131r\u0131r. Child obje olarak
+    i\xE7erisine eklenen Pool objelerini y\xF6netir. \n\nMultiplePoolModel objesinin
+    alt\u0131na her ekledi\u011Finiz poolun index bilgisini tutar ve pool i\xE7erisinden
+    obje \xE7a\u011F\u0131rmak istedi\u011Finiz zaman _multiplePoolModel.GetDeactiveItem<ObjeT\xFCr\xFC>(poolIndexi);
+    \u015Feklinde \xE7a\u011F\u0131rman\u0131z\u0131 sa\u011Flar. Ayr\u0131ca random
+    item de \xE7a\u011F\u0131rabilirsiniz.\n \nPoollar\u0131 Olu\u015Fturmak Ve Kullanmak\n\nPool
+    olu\u015Fturmak i\xE7in sahnedeki Pool objesinin alt\u0131na bir GameObject olu\u015Fturup
+    bu objeye MultiplePoolModel componentini atmal\u0131s\u0131n\u0131z. Daha sonra
+    bu objeye child olarak istedi\u011Finiz poollar\u0131 ekleyebilirsiniz. MultiplePoolModel'in
+    amac\u0131 poollar\u0131 obje tipine g\xF6re ay\u0131rmakt\u0131r. \xD6rne\u011Fin
+    sahnede bulunacak prop \xF6\u011Feleribi PropPools, obstacle poollar\u0131n\u0131
+    ObstaclePools i\xE7erisine atarak kod i\xE7erisinde de o MultiplePool i\xE7erisinden
+    farkl\u0131 obstacle/Prop tiplerini pool id vererek \xE7a\u011F\u0131rmak m\xFCmk\xFCnd\xFCr.  
+    \n\n{2}"
+  subPages:
+  - {fileID: 11400000, guid: 11914309f13858945a8c5747f7b6d08c, type: 2}
+  - {fileID: 11400000, guid: a66d62f8e80c73545a8ae332cbe4984c, type: 2}
+  images:
+  - {fileID: 2800000, guid: 3b2e8162797a5384794d7a73f1400206, type: 3}
+  - {fileID: 2800000, guid: b33ed2be16b6d4ec09fa0a6daa7f3fc4, type: 3}

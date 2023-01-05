@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Audio Manager
+  m_EditorClassIdentifier: 
+  moduleName: AudioManager
+  shortDescription: "Oyun i\xE7erisinde ses dosyalar\u0131n\u0131 oynatmak i\xE7in
+    kullan\u0131lan Manager objesidir. Singleton olarak bulundu\u011Fundan istenilen
+    yerden \xE7a\u011F\u0131r\u0131labilir."
+  fullDescription: "AudioManager objesi sahnede bulunan Monobased bir s\u0131n\u0131ft\u0131r.
+    alt\u0131nda \xFC\xE7 adet AudioSource bulundurur. \u0130\xE7erisinde Audios
+    tipinde bir scripable obje tutar. bu obje i\xE7erisinde AudioModel t\xFCr\xFCnden
+    bir liste tutar. Bu liste i\xE7erisine oynat\u0131lacak olan SFX ler eklenir
+    ve gerekli bilgiler girilir. AudioManager i\xE7erisinden ses oynatmak i\xE7in
+    basitce PlaySFX metodunun t\xFCrleri \xE7a\u011F\u0131r\u0131labilir. Daha fazla
+    metod incelemek i\xE7in kod dosyas\u0131n\u0131 inceleyebilirsiniz.\nAyr\u0131ca
+    sesi kapatmak veya d\xFCzeyini ayarlamak gibi i\u015Fleri de AudioManager i\xE7erisinden
+    yapabilirsiniz."
+  subPages: []
+  images: []

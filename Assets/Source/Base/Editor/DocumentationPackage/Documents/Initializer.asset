@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Initializer
+  m_EditorClassIdentifier: 
+  moduleName: Initializer
+  shortDescription: "Oyun i\xE7erisinde initailze edilecek \xF6\u011Felerin istenilen
+    s\u0131rayla initialize edilmesini sa\u011Flar. Initialize edilecek olan \xF6\u011Felerin
+    MonoBase s\u0131n\u0131f\u0131ndan miras alan bir s\u0131n\u0131f olmas\u0131
+    gerekmektedir. \u0130stenilen objeler initializer i\xE7erisindeki listeye eklenip
+    yeri ayarlanarak kolayca kullan\u0131labilir.\n\n"
+  fullDescription: "Initialize edilmesi istenen MonoBase s\u0131n\u0131f\u0131ndan
+    t\xFCretilmi\u015F s\u0131n\u0131flar\u0131, i\xE7erisindeki initialize metodunu
+    kullanarak initialize eder. Bu metod MonoBase s\u0131n\u0131f\u0131ndan miras
+    al\u0131n\u0131p override edilmelidir. InitializeOnAwake se\xE7ene\u011Fi se\xE7ili
+    oldu\u011Fu taktirde listeye eklenen \xF6\u011Feler s\u0131ras\u0131yla Awake
+    fonksiyonu i\xE7erisinde initialize edilir. Bu sebeple oyun i\xE7erisinde initialize
+    edilmesini istedi\u011Fimiz \xF6\u011Feleri bu obje i\xE7erisindeki listeye s\xFCr\xFCkleyip
+    s\u0131ras\u0131n\u0131 ayarlamam\u0131z yeterlidir. Bu se\xE7ene\u011Fin \xF6zel
+    durumlar d\u0131\u015F\u0131nda a\xE7\u0131k b\u0131rak\u0131lmas\u0131 \xF6nerilir. "
+  subPages:
+  - {fileID: 11400000, guid: efa36006bebdd0f45b3305653eafd30a, type: 2}
+  images: []

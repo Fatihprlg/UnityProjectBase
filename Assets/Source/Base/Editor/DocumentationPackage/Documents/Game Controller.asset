@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Game Controller
+  m_EditorClassIdentifier: 
+  moduleName: Game Controller
+  shortDescription: "Oyun d\xF6ng\xFCs\xFCn\xFC, stateleri ve state de\u011Fi\u015Fimleri
+    aras\u0131nda ger\xE7ekle\u015Fecek olaylar\u0131 kontrol eden controller \xF6\u011Fesidir.
+    Sahnede Controllers objesinin alt\u0131nda bulunur. Ge\xE7erli state'i, controllerlar\u0131
+    ve state de\u011Fi\u015Fti\u011Finde ger\xE7ekle\u015Fecek olaylar\u0131 tutar.\n\n"
+  fullDescription: "Game controller \xF6\u011Fesi oyun i\xE7erisindeki geriye kalan
+    controllerlar\u0131n update i\u015Flmelerini de i\xE7erisinde ger\xE7ekle\u015Ftirir.
+    \u0130ste\u011Fe ba\u011Fl\u0131 olarak bu \xF6zellik kullan\u0131labilir. GameController'\u0131n
+    \xE7al\u0131\u015Ft\u0131rmas\u0131n\u0131 istedi\u011Fimiz controller \xF6\u011Felerini,
+    GameController i\xE7erisindeki listeye s\xFCr\xFCkleyip b\u0131rak\u0131yoruz.
+    E\u011Fer Controller'\u0131n sahnedeki t\xFCm controllerlar\u0131 otomatik olarak
+    mapleyip \xE7a\u011F\u0131rmas\u0131n\u0131 isterseniz autoMapContollers kutucu\u011Funu
+    i\u015Faretlemeniz yeterlidir. Bu \xF6\u011Felerin ControllerBase s\u0131n\u0131f\u0131n\u0131
+    miras almas\u0131 gerekmektedir. Bundan sonra i\xE7erisine ControllerUpdate (fixed
+    ve late update de mevcut) metodunu override ederek bu \xF6zelli\u011Fi kullanabiliriz.
+    Bu metod parametre olarak oyunun ge\xE7erli state bilgisini al\u0131r. Controller
+    i\xE7erisinde ger\xE7ekle\u015Ftirilen farkl\u0131 olaylar\u0131n hangi statede
+    \xE7al\u0131\u015Ft\u0131r\u0131l\u0131p hangisinde \xE7al\u0131\u015Ft\u0131r\u0131lmayaca\u011F\u0131n\u0131
+    bu bilgi ile kontrol edebiliriz. \n\n{0}\n\nState de\u011Fi\u015Fimleri aras\u0131nda
+    ger\xE7ekle\u015Fmesini istedi\u011Fimiz olaylar\u0131 yine game controller componenti
+    i\xE7erisindeki onStateChange eventlerinin i\xE7erisine ekleyebiliriz. Buraya
+    ekleyece\u011Fimiz metot i\xE7erisine GameStates enum'\u0131ndan bir parametre
+    almal\u0131d\u0131r. State de\u011Fi\u015Fimi s\u0131ras\u0131nda istedi\u011Fimiz
+    bir state gelmesi durumunda kodumuzu \xE7al\u0131\u015Ft\u0131rmak i\xE7in bu
+    bilgiyi kullanabiliriz. \n\n{1}\n\nStateler\nOyun statelerini de\u011Fi\u015Ftirmek
+    i\xE7in GameController \xF6\u011Fesinin nesnesinden ChangeState metodu kullan\u0131lmal\u0131d\u0131r.
+    (_gameController.ChangeState(GameStates state);\n\nGameStates i\xE7erisinde bulunan
+    stateler:\n\tLoading: Oyun veya herhangi bir level y\xFCklenirken olu\u015Fan
+    statedir. Bu state i\xE7erisinde Loading screen \xE7al\u0131\u015F\u0131r. \n\tMain:
+    Oyuncu oyunu oynamaya ba\u015Flamadan \xF6nceki ana ekran\u0131n g\xF6sterildi\u011Fi
+    statedir. Bu state i\xE7erisinde ana men\xFC, upgrade butonlar\u0131, tutorial
+    vs. olabilir. \n\tGame: Oyunun oynand\u0131\u011F\u0131 statedir. Oyun i\xE7erisinde
+    \xE7al\u0131\u015Fan b\xFCt\xFCn i\u015Flemler (movement, pathfollow vs.) bu
+    statede ger\xE7ekle\u015Fir.\n\tEnd: Oyunun biti\u015F ekran\u0131d\u0131r. Bu
+    state yine GameController i\xE7erisinde bulunan EndState() fonksiyonuyla \xE7a\u011F\u0131r\u0131labilir.
+    Bu metod oyuncunun b\xF6l\xFCm\xFC ba\u015Far\u0131l\u0131 bir \u015Fekilde tamamlay\u0131p
+    tamamlamad\u0131\u011F\u0131n\u0131 isPlayerWin parametresiyle al\u0131r ve WinScreen
+    veya LoseScreen \xF6\u011Felerinden uygun olan\u0131 ekrana yans\u0131t\u0131r."
+  subPages: []
+  images:
+  - {fileID: 2800000, guid: c80e39c3daf55425385b1830fa0f4bbe, type: 3}
+  - {fileID: 2800000, guid: b083676a941df4bd0b7a4151a2a1d834, type: 3}

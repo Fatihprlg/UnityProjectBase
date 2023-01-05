@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Currency Manager
+  m_EditorClassIdentifier: 
+  moduleName: CurrencyManager
+  shortDescription: "Oyun i\xE7i currency olaylar\u0131n\u0131 y\xF6netmekte kullan\u0131lan
+    y\xF6neticidir. MonoBase olarak sahnede bulunur ve bilgileri ekrana yazd\u0131rmak
+    i\xE7in CurrencyViewModel'e ihtiya\xE7 duyar. "
+  fullDescription: "CurrencyManager basit\xE7e para kazanma, azaltma ve bu olaylar\u0131
+    ekranda g\xF6sterme i\u015Flerini y\xF6neten s\u0131n\u0131ft\u0131r. Bu bilgileri
+    PlayerDataModel'e kaydeder ve kal\u0131c\u0131 olarak saklar. Para de\u011Fi\u015Fimlerini
+    UpdateCurrency(int amount), UpdateCurrencySmooth(int amount) ve DecreaseCurrency(int
+    amount) metodlar\u0131n\u0131 kullanarak y\xF6netebilirsiniz. Bu para de\u011Fi\u015Fimleri
+    s\u0131ras\u0131nda ger\xE7ekle\u015Fmesini istedi\u011Finiz olaylar\u0131 da
+    OnCurrencyUpdate eventine ekleyebilirsiniz. Ayr\u0131ca CurrencyManager observer
+    tasar\u0131m kal\u0131b\u0131n\u0131 kullan\u0131r. Bu sebeple Initialize i\xE7erisinde
+    bu listeye Observer objenizi ekleyerek de currencyUpdate olaylar\u0131nda notify
+    metodunu kullanabilirsiniz."
+  subPages: []
+  images: []

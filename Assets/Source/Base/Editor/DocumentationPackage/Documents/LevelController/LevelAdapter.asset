@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: LevelAdapter
+  m_EditorClassIdentifier: 
+  moduleName: Level Adapter
+  shortDescription: "Level Controller'a leveli y\xFCklemesi ve kaydetmesi i\xE7in
+    yard\u0131mc\u0131 olan s\u0131n\u0131f."
+  fullDescription: "LevelAdapter, LevelController'dan gerekli bilgileri al\u0131p
+    sahneyi d\xFCzenleyen ve kaydeden objedir. LevelController'\u0131n yard\u0131mc\u0131
+    objesi diyebiliriz. Sahnede Kaydedilmesi istenen objeler LevelModel'e eklendikten
+    sonra bu s\u0131n\u0131f i\xE7erisinde kay\u0131t ve geri \xE7a\u011F\u0131rma
+    i\u015Flemi yap\u0131lmal\u0131d\u0131r."
+  subPages: []
+  images: []

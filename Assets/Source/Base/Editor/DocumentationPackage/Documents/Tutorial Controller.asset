@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Tutorial Controller
+  m_EditorClassIdentifier: 
+  moduleName: Tutorial Handler
+  shortDescription: "Tutorial Handler oyun i\xE7erisindeki tutoriallar\u0131n olu\u015Fturulmas\u0131n\u0131,
+    kullan\u0131lmas\u0131n\u0131 ve y\xF6netilmesini sa\u011Flar. Bu tutorialleri
+    ekranda g\xF6r\xFCnt\xFClemek i\xE7in TutorialScreen'i kullan\u0131r\n"
+  fullDescription: "Tutorial Handler objesi oyuncuya oyunun belirli k\u0131s\u0131mlar\u0131n\u0131
+    \xF6\u011Fretmek \xFCzere haz\u0131rlanacak olan tutoriallar\u0131n birka\xE7\u0131n\u0131
+    i\xE7inde bulunduran ve otomatik olarak olu\u015Fturmaya yarayan bir templatedir.
+    \u0130\xE7erisinde bulunan tutorial tipleri click button ve click object tutoriallar\u0131d\u0131r.
+    Yeni bir tutorial olu\u015Fturmak i\xE7in Assets/Prefabs/Lessons i\xE7erisinde
+    bulunan uygun Lesson tipini sahnede bulunan Screens'in alt\u0131nda TutorialScreen
+    objesine child olarak atabilirsiniz.\n\nOlu\u015Fturulan yeni ders TutorialHandler
+    componentindeki listeye y\xFCr\xFCt\xFClmesi istenilen s\u0131ralamayla at\u0131lmal\u0131d\u0131r.
+    Ders i\xE7erisindeki LessonModel componenti i\xE7erisinden istenilen \xF6zellikler
+    ayarlanabilir.\n\nBu tutorial objeleri \uF739s\u0131raya g\xF6re istenirse bir
+    trigger'a ba\u011Flanarak veya otomatik olarak verilen 'Delay' s\xFCresi kadar
+    arayla oynat\u0131labilir. Oyun ba\u015Flad\u0131\u011F\u0131nda TutorialHandler
+    otomatik olarak ilk tutoriali oynat\u0131r ve TutorialDataModel i\xE7erisindeki
+    indexi artt\u0131r\u0131r. TutorialDataModel i\xE7erisindeki index olu\u015Fturulan
+    tutorial say\u0131s\u0131ndan fazla veya e\u015Fit oldu\u011Funda tutorial tamamlan\u0131r.
+    Tutoriali el ile oynatmak i\xE7in istenilen yerde PlayCurrentTutorial() ve SwitchToNextTutorial()
+    metodlar\u0131 kullan\u0131labilir. Lessonlar\u0131n inputlar\u0131 dinleyip
+    otomatik olarak ilerlemesi i\xE7in SwitchTutorialsWithTouchInput kutucu\u011Funu
+    i\u015Faretleyebilirsiniz. \n\n{0}\n\nClick Button Lesson\n\nBas\u0131lmas\u0131
+    gereken bir butonu g\xF6steren tutorial\u0131 olu\u015Fturur. Helper Text \xF6zelli\u011Finin
+    yan\u0131nda bas\u0131lmas\u0131 gereken hedef buton bilgisini al\u0131r.\n\n{1}\n\nClick
+    Object Lesson\n\nT\u0131klan\u0131lmas\u0131 gereken bir objeyi hedef g\xF6steren
+    bir tutorial olu\u015Fturur. Hedef objenin pozisyonunu, Hepler Text bilgisini,
+    t\u0131klan\u0131lacak alan\u0131n geni\u015Fli\u011Fini (button scale) ve tutorial
+    bitiminde tetiklenecek eventleri edit\xF6rden al\u0131r. \n\n{2}\n\n\nOrtak \xF6zellikler:
+    SelfManaged kutucu\u011Fu otomatik olarak kapat\u0131lmayacak (touch inputla
+    vs.) el ile kapat\u0131lacak tutorialler i\xE7in i\u015Faretlenir. PlayWithTrigger
+    ise ba\u015Flarken otomatik de\u011Fil bir trigger ile \xE7a\u011F\u0131r\u0131lacak
+    lessonlar i\xE7in i\u015Faretlenir. Delay inputu ise lessonun \xE7a\u011F\u0131r\u0131ld\u0131ktan
+    ka\xE7 saniye sonra oynat\u0131laca\u011F\u0131n\u0131 belirler. \n\n"
+  subPages: []
+  images:
+  - {fileID: 2800000, guid: ea1d19b2d31484f5da52ff75ff97407a, type: 3}
+  - {fileID: 2800000, guid: f1a17ac6252a71b4382a61ede9476812, type: 3}
+  - {fileID: 2800000, guid: cdacffab29711e34ca331eac570de6fd, type: 3}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: MultiplePoolModel
+  m_EditorClassIdentifier: 
+  moduleName: Multiple Pool Model
+  shortDescription: "Birden \xE7ok pool objesini tutan obje."
+  fullDescription: "Multiple Pool Model objesi birden fazla pool objesini tutar.
+    Child obje olarak bu objenin alt\u0131na eklenen objeler Pool Model componentini
+    i\xE7ermelidir. Child objelerdeki Poollar\u0131 \xE7ekip sisteme tan\u0131mlamak
+    i\xE7in GetPools butonuna t\u0131klamak yeterlidir.\n"
+  subPages:
+  - {fileID: 11400000, guid: a66d62f8e80c73545a8ae332cbe4984c, type: 2}
+  images: []

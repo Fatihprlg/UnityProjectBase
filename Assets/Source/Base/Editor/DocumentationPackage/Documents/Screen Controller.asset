@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Screen Controller
+  m_EditorClassIdentifier: 
+  moduleName: Screen Controller
+  shortDescription: "Oyun i\xE7i ekranlar\u0131 ve bunlar aras\u0131ndaki ge\xE7i\u015Fleri
+    y\xF6neten controller \xF6\u011Fesidir. \u0130\xE7erisinde ekranlar\u0131n Screen
+    t\xFCr\xFCnden listesini tutar. Oyun i\xE7in state de\u011Fi\u015Fimlerine g\xF6re
+    ekran de\u011Fi\u015Fimleri otomatik olarak ayarlanm\u0131\u015Ft\u0131r."
+  fullDescription: "Screen Controller, ekranlar\u0131n listesini, aktif ekran\u0131,
+    ve ekranlar\u0131n otomatik de\u011Fi\u015Ftirilmesini tetiklemek i\xE7in autoChangeScreen
+    isminde bir boolean de\u011Feri tutar. Bu boolean de\u011Fer edit\xF6rden se\xE7ilirse
+    game controller \xF6\u011Fesinin onStateChange eventlerine ekran de\u011Fi\u015Fimlerini
+    i\xE7eren bir metod eklenir. Bu \u015Fekilde her stae de\u011Fi\u015Fiminde uygun
+    ekran da otomatik olarak y\xFCklenir. \nEdit\xF6rde bulunan MainScreenIndex de\u011Feri
+    ise oyun ba\u015Flad\u0131\u011F\u0131nda a\xE7\u0131lacak olan ilk ekran\u0131
+    g\xF6sterir. Ekranlar bu indexten itibaren s\u0131rayla d\xF6nd\xFCr\xFCl\xFCr.
+    MainIndexten \xF6nceki ekranlar ise belirli durumlarda g\xF6sterilecek ekranlard\u0131r(Tutorial,
+    PopUp vs.).\n\nDefault olarak bulunan ekranlar: \n\tLoading Screen: Oyun i\xE7erisinde
+    herhangi bir bekleme, y\xFCklenme a\u015Famas\u0131nda devreye girer.\n\tMain
+    Screen: Oyunun ana men\xFCs\xFCd\xFCr. i\xE7erisinde upgrade screen, oyuncu paras\u0131,
+    level bilgisi vs. bilgiler bulunur. Oyuncu paras\u0131 ve level bilgisi PlayerDataModel
+    objesinden otomatik olarak \xE7ekilir.\n\tGame Screen: Oyun oynarken g\xF6z\xFCken
+    ekrand\u0131r. Oyuncu paras\u0131 ve level bilgisi yine burada da g\xF6z\xFCk\xFCr
+    ve otomatik ayarlan\u0131r.\n\tEndScreen: Level sonu ekran\u0131d\u0131r. E\u011Fer
+    oyuncu ba\u015Far\u0131l\u0131 bir \u015Fekilde leveli tamamlad\u0131ysa Win
+    Screen, aksi taktirde Lose Screen elementini tetikler. \n\tTutorialScreen: Oyuna
+    eklenen Tutoriallar\u0131 i\xE7eren ekran eleman\u0131d\u0131r. Tutorial eklenmediyse
+    bo\u015F bir \u015Fekilde durur. Tutorial olu\u015Fturma dok\xFCmanlarda bulunmaktad\u0131r.\n"
+  subPages:
+  - {fileID: 11400000, guid: b25660341d4e2da43a1e8def74da2453, type: 2}
+  images: []

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Particles Controller
+  m_EditorClassIdentifier: 
+  moduleName: Particles Controller
+  shortDescription: "Oyun i\xE7erisindeki particle effectleri tutan poollar\u0131
+    kontrol etmek ve kullanmak i\xE7in olu\u015Fturulan componenttir. \n"
+  fullDescription: "Particles Controller sahnede bulunan particle poollar\u0131n\u0131
+    tutan ve y\xF6neten objedir. \n\nParticle Pool Olu\u015Fturma\n\nParticles Controller
+    objesine child olarak bo\u015F bir obje ekleyip bu objeye Particle Pool Model
+    componentini ekliyoruz. Bu a\u015Famada poolumuz olu\u015Fmu\u015F oluyor. \u0130\xE7erisine
+    ekledi\u011Fimiz her bir objeye de ParticleBaseModel componentini ekleyerek poolun
+    objeleri g\xF6rmesini sa\u011Flayabiliriz. Objelerimizi ekledikten sonra Particle
+    Pool Model componentindeki GetDeactiveItems butonuna t\u0131klayarak child olarak
+    ekledi\u011Fimiz particle objelerini pool model i\xE7erisindeki listeye ekleyebiliriz.
+    Pool olu\u015Fturulduktan sonra ise bu pool objesini Particles Controller objesindeki
+    Particle Pools listesine s\xFCr\xFCkleyip b\u0131rakmam\u0131z gerekmektedir.
+    Bunun yerine InitializeOnEditor butonuna t\u0131klayarak pool objesinin child'\u0131
+    olan t\xFCm particleModelleri \xE7ekmesini sa\u011Flayabilirsiniz.\n\n{0}\n\nPool
+    Objesini \xC7a\u011F\u0131rma\n\nPool objesini kod i\xE7erisinde \xE7a\u011F\u0131rmak
+    i\xE7in particle controller \xF6\u011Fesinin static olan instance \xF6zelli\u011Finden
+    yine static olan SetParticle metodunu \xE7a\u011F\u0131rmam\u0131z yeterli olacakt\u0131r.
+    Bu metodun 2 adet uygulan\u0131\u015F\u0131 bulunmaktad\u0131r. \u0130lk uygulamada
+    \xE7a\u011F\u0131raca\u011F\u0131m\u0131z particle objesinin pool indexi,  world
+    pozisyonu ve particle ile beraber verilecek titre\u015Fimin t\xFCr\xFC parametre
+    olarak verilmelidir. \u0130kinci uygulamada ise bu \xF6zelliklerin yan\u0131s\u0131ra
+    Quaternion cinsinden particle'a bir rotasyon vermek m\xFCmk\xFCnd\xFCr.\n\n{1}\n\n\n"
+  subPages:
+  - {fileID: 11400000, guid: 1a7bac6d7894ae445afae37c7ffe957b, type: 2}
+  - {fileID: 11400000, guid: 6998b8ad0d74d75479f74e13e831b9b6, type: 2}
+  images:
+  - {fileID: 2800000, guid: 4dbfc0d4b08cd654c9fd17b598a8c5b7, type: 3}
+  - {fileID: 2800000, guid: 6ca3c26721dbf394984550a429dc5e83, type: 3}

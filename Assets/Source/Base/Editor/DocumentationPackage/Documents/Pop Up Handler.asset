@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Pop Up Handler
+  m_EditorClassIdentifier: 
+  moduleName: Pop Up Handler
+  shortDescription: "Ekrana istenilen zaman pop up ekranlar\u0131 \xE7\u0131kart\u0131lmas\u0131n\u0131
+    sa\u011Flayan yap\u0131. Custom pop up ekranlar\u0131 d\xFCzenlenmesini destekler.
+    Bunun yan\u0131nda \xE7\u0131kacak olan pop up \xF6zellikleri runtime'da da atanabilir."
+  fullDescription: "Pop Up Handler s\u0131n\u0131f\u0131, Pop Up View Model \xF6\u011Fesini
+    y\xF6netir ve verilen ba\u015Fl\u0131k, yaz\u0131, buton de\u011Ferlerine g\xF6re
+    Pop Up ekranlar\u0131 \xE7\u0131kart\u0131r. Kullanmak i\xE7in sahnede bir PopUp
+    handler componenti i\xE7eren obje olu\u015Fturun ve ayn\u0131 \u015Fekilde bir
+    Canvas'\u0131n alt\u0131na Pop Up View Model olu\u015Fturup alt\u0131na gerekli
+    \xF6zellikleri i\xE7eren Pop Up Screen ekleyin. (MainScene i\xE7erisinde default
+    olarak bulunur). Daha sonra bu ekran\u0131 kod i\xE7erisinden \xE7a\u011F\u0131rmak
+    i\xE7in singleton olan PopUpHandler s\u0131n\u0131f\u0131n\u0131 kullanabilirsiniz.
+    S\u0131n\u0131f i\xE7erisinde pop up \xE7a\u011F\u0131rmak i\xE7in ShowPopUp
+    fonksiyonunun bi\xE7imlerini, ekranda g\xF6sterdi\u011Finiz Pop Up ekranlar\u0131n\u0131
+    gizlemek i\xE7in ise HidePopUp fonksiyonlar\u0131n\u0131 kullanabilirsiniz. Ard
+    arda birden fazla Pop Up ekran\u0131n\u0131 bir \xF6ncekini gizlemeden a\xE7arsan\u0131z,
+    Handler bu pop up'lar\u0131 bir kuyruk yap\u0131s\u0131na atarak ard arda ekrandaki
+    pop up gizlendik\xE7e a\xE7acakt\u0131r."
+  subPages: []
+  images: []
