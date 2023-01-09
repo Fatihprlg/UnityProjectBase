@@ -4,11 +4,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-interface IContext
-{
-    public void Initialize();
-    public void CreateBuilder();
-}
 public class Context : MonoBase, IContext
 {
     [SerializeField] protected Builder mainBuilder;
@@ -18,7 +13,7 @@ public class Context : MonoBase, IContext
         container = new();
         if (mainBuilder == null) CreateBuilder();
         mainBuilder.Build(container);
-        container.Initialize();
+        IOCExtenions.SetDependencyInjector(container);
     }
 
     public void CreateBuilder()

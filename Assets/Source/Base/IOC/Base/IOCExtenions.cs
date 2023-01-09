@@ -1,4 +1,6 @@
-﻿public static class IOCExtenions
+﻿using System.Linq;
+
+public static class IOCExtenions
 {
     private static Container injector;
 

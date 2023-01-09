@@ -13,12 +13,7 @@ public class Container
     protected readonly Dictionary<Type, Dictionary<string, Type>>
     types = new Dictionary<Type, Dictionary<string, Type>>();
     protected readonly Dictionary<Type, TypeData> typeDatas = new Dictionary<Type, TypeData>();
-    
-    public virtual void Initialize()
-    {
-        IOCExtenions.SetDependencyInjector(this);
-    }
-    
+
     public virtual void Register(Type interfaceType, Type type, ClassInfo info)
     {
         try
@@ -68,7 +63,6 @@ public class Container
     public T Inject<T>(object obj)
     {
         return (T)this.Inject(typeof(T), obj);
-    
     }
 
     private object ConstructClass(Type type)
@@ -104,7 +98,7 @@ public class Container
     public object Inject(Type type, object obj)
     {
         var typeData = this.GetTypeData(type);
-
+        
         typeData.Fields.ForEach(x => x.Value.SetValue(obj, this.Resolve(x.Value.FieldType, string.IsNullOrEmpty(x.Key.Key) ? GetImplementation(x.Value.FieldType).gameObject.name : x.Key.Key)));
         typeData.Properties.ForEach(x => x.Value.SetValue(obj, this.Resolve(x.Value.PropertyType, x.Key.Key), null));
 
@@ -117,7 +111,7 @@ public class Container
             "There is no implementation registered with the key {0} for the type {1}.", key, type.Name);
 
         var foundType = this.types[type.BaseType][key ?? string.Empty];
-        var implementationOfType = this.implementations[type][key ?? string.Empty].GetComponent(type.Name) ?? Inject(foundType, implementations[type][key ?? string.Empty].AddComponent(foundType));
+        var implementationOfType = this.implementations[type][key ?? string.Empty].GetComponent(type) ?? Inject(foundType, implementations[type][key ?? string.Empty].AddComponent(foundType));
         var typeData = this.typeDatas[foundType];
 
         if (foundType.IsSubclassOf(typeof(MonoBase)))
@@ -152,7 +146,7 @@ public class Container
         {
             imp = this.implementations[type][key];
         }
-        var implementationOfType = imp.GetComponent(type.Name);
+        var implementationOfType = imp.GetComponent(type);
         return implementationOfType;
     }
 

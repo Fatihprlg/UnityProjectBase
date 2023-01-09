@@ -68,6 +68,7 @@ public class CurrencyManager : MonoSingleton<CurrencyManager>, ICrossSceneObject
     }
     public void HandleDontDestroy()
     {
+        transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
     }
 }

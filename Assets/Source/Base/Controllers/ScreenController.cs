@@ -13,11 +13,13 @@ public class ScreenController : ControllerBase
     public override void Initialize()
     {
         base.Initialize();
-        foreach (var item in screens)
+        for (int index = mainScreenIndex; index < screens.Length; index++)
         {
+            ScreenModel item = screens[index];
             item.Initialize();
             item.Hide();
         }
+
         currentScreen = screens[mainScreenIndex];
         currentScreenIndex = mainScreenIndex;
         currentScreen.Show();

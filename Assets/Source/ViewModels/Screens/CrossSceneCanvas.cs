@@ -14,6 +14,7 @@ public class CrossSceneCanvas : MonoSingleton<CrossSceneCanvas>, ICrossSceneObje
 
     public void HandleDontDestroy()
     {
+        transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
     }
 }

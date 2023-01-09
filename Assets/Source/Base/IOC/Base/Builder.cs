@@ -8,7 +8,7 @@ using UnityEditor;
 #endif
 public class Builder : MonoBase, IBuilder
 {
-    [SerializeField , HideInInspector] protected List<ClassInfo> classes;
+    [SerializeField ] protected List<ClassInfo> classes;
 
     public void Build(Container container)
     {
@@ -34,7 +34,6 @@ public class Builder : MonoBase, IBuilder
         foreach (var mono in monos)
         {
             if(mono == null) continue;
-            if(mono.GetType().GetInterfaces().Contains(typeof(ICrossSceneObject))) continue;
             ClassInfo info = new ClassInfo()
             {
                 implementation = mono,

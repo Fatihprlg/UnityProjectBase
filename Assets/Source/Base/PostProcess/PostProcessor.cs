@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -19,4 +18,3 @@ public class PostProcessor : MonoBehaviour
         volume.profile = Profiles[index];
     }
 }
-#endif

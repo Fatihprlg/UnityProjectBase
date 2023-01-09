@@ -113,6 +113,7 @@ public class LevelController : MonoBase
 
     private void LoadLevelHelper(int levelIndex, bool isEditorMode = false)
     {
+        if(levelModels.list.Count == 0) return;
         if (levelModels.list.Count <= levelIndex)
         {
             levelIndex = 0;

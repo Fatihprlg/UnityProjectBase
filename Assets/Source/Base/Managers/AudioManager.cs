@@ -113,6 +113,7 @@ public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject
 
     public void HandleDontDestroy()
     {
+        transform.SetParent(null);
         DontDestroyOnLoad(this);
     }
 }

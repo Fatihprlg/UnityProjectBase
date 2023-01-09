@@ -6,20 +6,24 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class DataHandler : MonoBase, ICrossSceneObject
+public class DataHandler : MonoSingleton<DataHandler>, ICrossSceneObject
 {
     public SettingsDataModel Setting;
     public PlayerDataModel Player;
     public TutorialDataModel Tutorial;
     public MapUpgradeDataModel Upgrade;
+    private bool isInitialized;
     public override void Initialize()
     {
+        destroyGameObjectOnDuplicate = true;
         base.Initialize();
+        if(destroyed) return;
         HandleDontDestroy();
         Setting = new SettingsDataModel().Load();
         Player = new PlayerDataModel().Load();
         Tutorial = new TutorialDataModel().Load();
         Upgrade = new MapUpgradeDataModel().Load();
+        isInitialized = true;
     }
 
     [EditorButton()]
@@ -35,12 +39,13 @@ public class DataHandler : MonoBase, ICrossSceneObject
 
         if (Directory.GetFiles(Application.persistentDataPath, "*.dat").Length == 0)
         {
-            Debug.Log("Data Clear Successed");
+            Debug.Log("Data Clear Succeed");
         }
     }
 
     private void SaveDatas()
     {
+        if(!isInitialized) return;
         PlayerDataModel.Data.Save();
         TutorialDataModel.Data.Save();
         SettingsDataModel.Data.Save();
@@ -56,6 +61,7 @@ public class DataHandler : MonoBase, ICrossSceneObject
     }
     public void HandleDontDestroy()
     {
+        transform.SetParent(null);
         DontDestroyOnLoad(gameObject);
     }
 
