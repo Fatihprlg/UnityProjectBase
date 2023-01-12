@@ -507,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pools:
   - {fileID: 508939614}
+  - {fileID: 150622921}
 --- !u!4 &327870992
 Transform:
   m_ObjectHideFlags: 0
@@ -5931,7 +5932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d178073bb202041ec971e363acca4270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlePools: []
+  particlePools:
+  - {fileID: 499883811}
 --- !u!4 &680902631
 Transform:
   m_ObjectHideFlags: 0
@@ -6178,11 +6180,18 @@ MonoBehaviour:
   upgradeModels:
   - name: income
     id: 1
-    tutorialPrice: 123
-    defPrice: 0
-    pricePerLevel: 0
-    pricePerMap: 0
-    increaseRate: 0
+    tutorialPrice: 3
+    defPrice: 100
+    pricePerLevel: 5
+    pricePerMap: 20
+    increaseRate: 0.5
+  - name: speed
+    id: 1
+    tutorialPrice: 3
+    defPrice: 50
+    pricePerLevel: 20
+    pricePerMap: 10
+    increaseRate: 0.3
 --- !u!1 &832113137
 GameObject:
   m_ObjectHideFlags: 0

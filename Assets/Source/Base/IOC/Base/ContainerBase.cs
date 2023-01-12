@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using Unity.VisualScripting;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 [System.Serializable]
@@ -32,7 +30,8 @@ public class Container
             }
             if (this.types.ContainsKey(interfaceType ?? type))
             {
-                if (types[interfaceType ?? type].ContainsKey(key ?? string.Empty)) key = key + "(1)";
+                var regex = new Regex($"{key}[0-9]*$");
+                if (types[interfaceType ?? type].ContainsKey(key ?? string.Empty)) key = key + types[interfaceType ?? type].Count(type => regex.IsMatch(type.Key));
                 this.types[interfaceType ?? type].Add(key ?? string.Empty, type);
             }
             else

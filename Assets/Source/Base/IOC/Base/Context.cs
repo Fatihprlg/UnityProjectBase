@@ -13,7 +13,7 @@ public class Context : MonoBase, IContext
         container = new();
         if (mainBuilder == null) CreateBuilder();
         mainBuilder.Build(container);
-        IOCExtenions.SetDependencyInjector(container);
+        IOCExtensions.SetDependencyInjector(container);
     }
 
     public void CreateBuilder()

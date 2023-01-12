@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-public static class IOCExtenions
+public static class IOCExtensions
 {
     private static Container injector;
 
