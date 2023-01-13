@@ -13,8 +13,8 @@ public static class IOCExtensions
     {
         injector.Inject<T>(classToInject);
     }
-    public static void Inject<T>(this T classToInject, Container injector) where T : class
+    /*public static void Inject<T>(this T classToInject, Container injector) where T : class
     {
         injector.Inject<T>(classToInject);
-    }
+    }*/
 }
