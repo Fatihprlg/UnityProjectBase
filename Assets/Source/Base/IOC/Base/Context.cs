@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Context : MonoBase, IContext
+public class Context : MonoBehaviour, IContext, IInitializable
 {
     [SerializeField] protected Builder mainBuilder;
     protected Container container;
-    public override void Initialize()
+    public void Initialize()
     {
         container = new();
         if (mainBuilder == null) CreateBuilder();

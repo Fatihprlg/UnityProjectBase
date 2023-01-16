@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrossSceneCanvas : MonoSingleton<CrossSceneCanvas>, ICrossSceneObject
+public class CrossSceneCanvas : MonoSingleton<CrossSceneCanvas>, ICrossSceneObject, IInitializable
 {
-    public override void Initialize()
+    public void Initialize()
     {
         destroyGameObjectOnDuplicate = true;
         base.Initialize();

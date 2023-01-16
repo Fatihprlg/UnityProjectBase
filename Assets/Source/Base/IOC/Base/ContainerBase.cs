@@ -16,10 +16,10 @@ public class Container
     {
         try
         {
-            TypeData typeData = TypeData.Create(type, info.isSingleton, type.IsSubclassOf(typeof(MonoBase)) ? info.implementation : null);
+            TypeData typeData = TypeData.Create(type, info.isSingleton, type.IsSubclassOf(typeof(MonoBehaviour)) ? info.implementation : null);
             string key = "";
             object implementation = new();
-            if (type.IsSubclassOf(typeof(MonoBase)))
+            if (type.IsSubclassOf(typeof(MonoBehaviour)))
             {
                 key = info.implementation.gameObject.name;
                 implementation = info.implementation.gameObject;
@@ -113,7 +113,7 @@ public class Container
         var implementationOfType = this.implementations[type][key ?? string.Empty].GetComponent(type) ?? Inject(foundType, implementations[type][key ?? string.Empty].AddComponent(foundType));
         var typeData = this.typeDatas[foundType];
 
-        if (foundType.IsSubclassOf(typeof(MonoBase)))
+        if (foundType.IsSubclassOf(typeof(MonoBehaviour)))
         {
             typeData.Instance = implementationOfType;
             return implementationOfType;
@@ -153,6 +153,6 @@ public class Container
 [System.Serializable]
 public struct ClassInfo
 {
-    public MonoBase implementation;
+    public MonoBehaviour implementation;
     public bool isSingleton;
 }

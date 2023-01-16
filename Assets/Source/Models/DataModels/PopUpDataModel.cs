@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class PopUpDataModel : NonMonoBase
+public class PopUpDataModel
 {
     public int Index;
     public string Header;

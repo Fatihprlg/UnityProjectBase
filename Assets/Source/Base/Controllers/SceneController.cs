@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoSingleton<SceneController>, ICrossSceneObject
+public class SceneController : MonoSingleton<SceneController>, ICrossSceneObject, IInitializable
 {
     public SceneModel CurrentScene => currentScene;
     public UnityEvent<SceneModel> OnSceneLoad;
@@ -15,7 +15,7 @@ public class SceneController : MonoSingleton<SceneController>, ICrossSceneObject
     [Dependency, SerializeField] private SceneLoadingViewModel loadingScreen;
     private SceneModel currentScene;
     
-    public override void Initialize()
+    public void Initialize()
     {
         destroyGameObjectOnDuplicate = true;
         base.Initialize();

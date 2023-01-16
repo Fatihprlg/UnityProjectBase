@@ -6,14 +6,14 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class DataHandler : MonoSingleton<DataHandler>, ICrossSceneObject
+public class DataHandler : MonoSingleton<DataHandler>, ICrossSceneObject, IInitializable
 {
     public SettingsDataModel Setting;
     public PlayerDataModel Player;
     public TutorialDataModel Tutorial;
     public MapUpgradeDataModel Upgrade;
     private bool isInitialized;
-    public override void Initialize()
+    public void Initialize()
     {
         destroyGameObjectOnDuplicate = true;
         base.Initialize();

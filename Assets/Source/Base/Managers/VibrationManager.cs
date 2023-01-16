@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.NiceVibrations;
 
-public class VibrationManager : NonMonoBase
+public class VibrationManager : IInitializable
 {
     public static bool IsVibrationOn => isVibrationOn;
     static float lastVibrationTime;
@@ -13,9 +13,8 @@ public class VibrationManager : NonMonoBase
     {
         Initialize();
     }
-    public override void Initialize()
+    public void Initialize()
     {
-        base.Initialize();
         isVibrationOn = SettingsDataModel.Data.isVibrationOn;
     }
 

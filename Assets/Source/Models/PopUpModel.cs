@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PopUpModel : MonoBase
+public class PopUpModel : MonoBehaviour
 {
     public UnityAction onHide;
     public UnityAction onShow;

@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using DG.Tweening;
 
-public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject
+public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject, IInitializable
 {
     public bool IsAudioOn => isAudioOn;
     [SerializeField] Audios audios;
@@ -14,7 +14,7 @@ public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject
     bool isAudioOn;
     [Range(0, 1)] float volumeMutliplier;
 
-    public override void Initialize()
+    public void Initialize()
     {
         base.Initialize();
         isAudioOn = SettingsDataModel.Data.isAudioOn;

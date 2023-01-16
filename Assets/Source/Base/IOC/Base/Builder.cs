@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
 using System.Reflection;
 using UnityEditor;
 
-//#endif
-public class Builder : MonoBase, IBuilder
+#endif
+public class Builder : MonoBehaviour, IBuilder
 {
     //[SerializeField] protected List<ClassInfo> classes;
     public List<ClassInfo> classes { get; private set; }
@@ -22,18 +22,19 @@ public class Builder : MonoBase, IBuilder
         }
     }
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
     public void OnValidate()
     {
         AssemblyReloadEvents.afterAssemblyReload -= MapClasses;
         AssemblyReloadEvents.afterAssemblyReload += MapClasses;
     }
+#endif
 
     public void MapClasses()
     {
         classes = new List<ClassInfo>();
         classes.Clear();
-        var monos = FindObjectsOfType<MonoBase>(true);
+        var monos = FindObjectsOfType<MonoBehaviour>(true);
         foreach (var mono in monos)
         {
             if (mono == null) continue;
@@ -45,10 +46,9 @@ public class Builder : MonoBase, IBuilder
             classes.Add(info);
         }
     }
-//#endif
 }
 
-//#if UNITY_EDITOR
+#if UNITY_EDITOR
 [CustomEditor(typeof(Builder))]
 public class BuilderEditor : Editor
 {
@@ -94,4 +94,4 @@ public class BuilderEditor : Editor
     }
 
 }
-//#endif
+#endif

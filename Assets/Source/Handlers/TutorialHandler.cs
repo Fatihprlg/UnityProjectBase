@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class TutorialHandler : MonoBase
+public class TutorialHandler : MonoBehaviour, IInitializable
 {
     public static bool isTutorialEnd;
     [SerializeField] bool switchTutorialsWithTouchInput;
@@ -13,9 +13,8 @@ public class TutorialHandler : MonoBase
     private LessonModel currentTutorial;
     private bool lessonActive;
 
-    public override void Initialize()
+    public void Initialize()
     {
-        base.Initialize();
         currentTutorialIndex = TutorialDataModel.Data.TutorialIndex;
 
         if (currentTutorialIndex < tutorials.Count)

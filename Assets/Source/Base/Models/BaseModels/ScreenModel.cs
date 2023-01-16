@@ -2,16 +2,15 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ScreenModel : MonoBase
+public class ScreenModel : MonoBehaviour, IInitializable
 {
     [SerializeField] protected ScreenElement[] screenElements;
     [SerializeField] protected UnityEvent onShowEvent;
     [SerializeField] protected UnityEvent onHideEvent;
     [SerializeField] protected CanvasGroup canvasGroup;
 
-    public override void Initialize()
+    public void Initialize()
     {
-        base.Initialize();
         foreach (var item in screenElements)
         {
             item.Initialize();

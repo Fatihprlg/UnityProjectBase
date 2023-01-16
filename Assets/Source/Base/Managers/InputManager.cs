@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class InputManager : NonMonoBase
+public class InputManager
 {
     public Vector2 PointerDownPosition;
     public Vector2 PointerPosition;

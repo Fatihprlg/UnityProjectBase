@@ -5,7 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine.Events;
 
-public class LessonModel : MonoBase
+public class LessonModel : MonoBehaviour
 {
     public bool selfManaged;
     public bool playByTrigger;

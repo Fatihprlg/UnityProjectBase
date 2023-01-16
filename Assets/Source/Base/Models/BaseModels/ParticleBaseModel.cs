@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ParticleSystem))]
-public class ParticleBaseModel : MonoBase
+public class ParticleBaseModel : MonoBehaviour
 {
     public ParticleSystem Particle;
    

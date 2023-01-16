@@ -10,7 +10,7 @@ using UnityEngine;
 /// Override <code>Init()</code> method instead of using <code>Awake()</code>
 /// from this class.
 /// </summary>
-public abstract class MonoSingleton<T> : MonoBase where T : MonoSingleton<T>
+public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 {
     public static bool IsTemporaryInstance { private set; get; }
     protected bool destroyGameObjectOnDuplicate;
@@ -56,7 +56,12 @@ public abstract class MonoSingleton<T> : MonoBase where T : MonoSingleton<T>
 
     // If no other monobehaviour request the instance in an awake function
     // executing before this one, no need to search the object.
-    public override void Initialize()
+    private void Awake()
+    {
+        Initialize();
+    }
+
+    public void Initialize()
     {
         if (MInstance == null)
         {

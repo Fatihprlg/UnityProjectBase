@@ -4,7 +4,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 [Serializable]
-public class DataModel : NonMonoBase
+public class DataModel
 {
     protected virtual void Save(object data)
     {

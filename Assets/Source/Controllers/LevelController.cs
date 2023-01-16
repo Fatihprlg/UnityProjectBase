@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using UnityEditor;
 #endif
 
-public class LevelController : MonoBase
+public class LevelController : MonoBehaviour, IInitializable
 {
     public bool initializeOnAwake;
     public int forceLevelIndex = -1;
@@ -27,7 +27,7 @@ public class LevelController : MonoBase
         Init();
     }
 
-    public override void Initialize()
+    public void Initialize()
     {
         if (initializeOnAwake) return;
         Init();

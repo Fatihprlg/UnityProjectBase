@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiplePoolModel : MonoBase
+public class MultiplePoolModel : MonoBehaviour
 {
     [SerializeField] List<PoolModel> pools;
 

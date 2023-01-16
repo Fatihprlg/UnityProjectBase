@@ -7,14 +7,13 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 
 [DisallowMultipleComponent]
-public class LevelAdapter : MonoBase
+public class LevelAdapter : MonoBehaviour, IInitializable
 {
     public int GetUpgradeTypeCount => upgradeController.GetUpgradeTypesCount;
     [SerializeField] private MultiplePoolModel[] worldItemPools;
     [Dependency] private UpgradeController upgradeController;
-    public override void Initialize()
+    public void Initialize()
     {
-        base.Initialize();
         this.Inject();
     }
 

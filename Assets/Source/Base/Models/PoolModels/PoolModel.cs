@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class PoolModel : MonoBase
+public class PoolModel : MonoBehaviour
 {
     [SerializeField] List<GameObject> items;
 

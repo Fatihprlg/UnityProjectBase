@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScreenElement : MonoBase
+public class ScreenElement : MonoBehaviour, IInitializable
 {
-
+    public virtual void Initialize()
+    {
+        
+    }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine.Events;
 
-public class CurrencyManager : MonoSingleton<CurrencyManager>, ICrossSceneObject
+public class CurrencyManager : MonoSingleton<CurrencyManager>, ICrossSceneObject, IInitializable
 {
     public CurrencyViewModel currencyView;
     public UnityAction OnCurrencyUpdate;
@@ -21,7 +21,7 @@ public class CurrencyManager : MonoSingleton<CurrencyManager>, ICrossSceneObject
     }
     private PlayerDataModel data;
     
-    public override void Initialize()
+    public void Initialize()
     {
         base.Initialize();
         HandleDontDestroy();

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerBase : MonoBase
+public class ControllerBase : MonoBehaviour, IInitializable
 {
     public virtual void ControllerUpdate(GameStates currentState)
     {
@@ -20,5 +20,10 @@ public class ControllerBase : MonoBase
     public virtual void OnStateChanged(GameStates state)
     {
 
+    }
+
+    public virtual void Initialize()
+    {
+        
     }
 }
