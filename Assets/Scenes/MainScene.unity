@@ -6516,19 +6516,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4bbbf0674574172aa928c6a9ed19e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneItems:
-  - {fileID: 1738775795}
-  - {fileID: 1810176823}
-  - {fileID: 1694095905}
-  - {fileID: 370420191}
-  - {fileID: 7474832030926342466}
-  - {fileID: 5557876370249487560}
-  - {fileID: 5557876370444349567}
-  - {fileID: 12569626}
-  - {fileID: 54975575}
-  - {fileID: 773127283}
-  - {fileID: 1596615481}
   initializeOnAwake: 1
+  initializableObjects:
+  - {fileID: 1738775793}
+  - {fileID: 1810176821}
+  - {fileID: 7474832030926342467}
+  - {fileID: 680902629}
+  - {fileID: 12569625}
+  - {fileID: 773127281}
+  - {fileID: 1694095903}
+  - {fileID: 370420189}
+  - {fileID: 54975573}
+  - {fileID: 1596615478}
 --- !u!4 &1095388948
 Transform:
   m_ObjectHideFlags: 0
@@ -7482,89 +7481,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641b5acc7407b4d7caca8772ded0da78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  classes:
-  - implementation: {fileID: 12569626}
-    isSingleton: 0
-  - implementation: {fileID: 54975575}
-    isSingleton: 0
-  - implementation: {fileID: 150622921}
-    isSingleton: 0
-  - implementation: {fileID: 327870991}
-    isSingleton: 0
-  - implementation: {fileID: 363685831}
-    isSingleton: 0
-  - implementation: {fileID: 370420191}
-    isSingleton: 0
-  - implementation: {fileID: 499883811}
-    isSingleton: 0
-  - implementation: {fileID: 508939614}
-    isSingleton: 0
-  - implementation: {fileID: 510819279}
-    isSingleton: 0
-  - implementation: {fileID: 680902630}
-    isSingleton: 0
-  - implementation: {fileID: 754615650}
-    isSingleton: 0
-  - implementation: {fileID: 773127283}
-    isSingleton: 0
-  - implementation: {fileID: 832113139}
-    isSingleton: 0
-  - implementation: {fileID: 1095388947}
-    isSingleton: 0
-  - implementation: {fileID: 1297757363}
-    isSingleton: 0
-  - implementation: {fileID: 1379592573}
-    isSingleton: 0
-  - implementation: {fileID: 1446276672}
-    isSingleton: 0
-  - implementation: {fileID: 1596615481}
-    isSingleton: 0
-  - implementation: {fileID: 1694095905}
-    isSingleton: 0
-  - implementation: {fileID: 1738775795}
-    isSingleton: 0
-  - implementation: {fileID: 1738775796}
-    isSingleton: 0
-  - implementation: {fileID: 1810176823}
-    isSingleton: 0
-  - implementation: {fileID: 5557876370249487560}
-    isSingleton: 0
-  - implementation: {fileID: 5557876370444349567}
-    isSingleton: 0
-  - implementation: {fileID: 5557876370677152913}
-    isSingleton: 0
-  - implementation: {fileID: 7474832028935093336}
-    isSingleton: 0
-  - implementation: {fileID: 7474832029050186228}
-    isSingleton: 0
-  - implementation: {fileID: 7474832029318671275}
-    isSingleton: 0
-  - implementation: {fileID: 7474832029451958325}
-    isSingleton: 0
-  - implementation: {fileID: 7474832029791971622}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030194908074}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030213943022}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030329561097}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030496597917}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030562614976}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030617465850}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030705498001}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030771241067}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030857721811}
-    isSingleton: 0
-  - implementation: {fileID: 7474832030926342466}
-    isSingleton: 0
-  - implementation: {fileID: 7474832031066321771}
-    isSingleton: 0
 --- !u!1 &1763491028
 GameObject:
   m_ObjectHideFlags: 0

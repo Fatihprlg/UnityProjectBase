@@ -5,15 +5,17 @@ using UnityEngine;
 #if UNITY_EDITOR
 using System.Reflection;
 using UnityEditor;
+using UnityEngine.Rendering;
 
 #endif
+
 public class Builder : MonoBehaviour, IBuilder
 {
-    //[SerializeField] protected List<ClassInfo> classes;
     public List<ClassInfo> classes { get; private set; }
+
     public void Build(Container container)
     {
-        if(classes == null || classes.Count <1) MapClasses();
+        if (classes == null || classes.Count < 1) MapClasses();
         foreach (var item in classes)
         {
             if (item.implementation == null) continue;
@@ -38,7 +40,8 @@ public class Builder : MonoBehaviour, IBuilder
         foreach (var mono in monos)
         {
             if (mono == null) continue;
-            ClassInfo info = new ()
+            if(mono.GetType().Assembly != Assembly.GetAssembly(GetType())) continue;
+            ClassInfo info = new()
             {
                 implementation = mono,
                 isSingleton = mono.GetType().IsSubclassOf(typeof(MonoSingleton<>))
@@ -54,16 +57,11 @@ public class BuilderEditor : Editor
 {
     private Builder builder;
     private GUIContent mapClassesContent;
-    private GUIStyle linkStyle;
+
     private void OnEnable()
     {
         builder = target as Builder;
         mapClassesContent = new GUIContent("Map Classes On Scene");
-        linkStyle= new GUIStyle(EditorStyles.label);
-        linkStyle.wordWrap = false;
-        // Match selection color w$$anonymous$$ch works nicely for both light and dark skins
-        linkStyle.normal.textColor = new Color(0x00 / 255f, 0x78 / 255f, 0xDA / 255f, 1f);
-        linkStyle.stretchWidth = false;
     }
 
     public override void OnInspectorGUI()
@@ -75,23 +73,27 @@ public class BuilderEditor : Editor
         {
             builder.MapClasses();
         }
+
         EditorUtils.DrawUILine(Color.white);
         GUILayout.Label("Classes on Scene");
         GUILayout.Space(5);
-
-        for (int index = 0; index < builder.classes.Count; index++)
-        {
-            ClassInfo @class = builder.classes[index];
-            if (GUILayout.Button( (index + 1).ToString() + ". " + @class.implementation.GetType().Name, EditorStyles.linkLabel))
+        if (builder.classes != null)
+            for (int index = 0; index < builder.classes.Count; index++)
             {
-                Selection.SetActiveObjectWithContext(@class.implementation, null);
+                ClassInfo @class = builder.classes[index];
+                GUIContent name = new ((index + 1) + ". " + @class.implementation.GetType().Name);
+                if (GUILayout.Button(name,
+                        EditorStyles.linkLabel))
+                {
+                    Selection.SetActiveObjectWithContext(@class.implementation, null);
+                }
+                var rect = GUILayoutUtility.GetLastRect();
+                rect.width = EditorStyles.linkLabel.CalcSize(name).x;
+                EditorGUIUtility.AddCursorRect(rect, MouseCursor.Link);
             }
-            //GUILayout.Label(@class.implementation.GetType().Name);
-        }
 
         EditorUtils.DrawUILine(Color.white);
         EditorGUILayout.EndVertical();
     }
-
 }
 #endif
