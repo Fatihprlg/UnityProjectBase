@@ -4,9 +4,10 @@ using UnityEngine;
 using Cinemachine;
 public class CameraController : ControllerBase
 {
-    [SerializeField] CinemachineVirtualCamera[] cameras;
+    public static readonly Camera MainCamera = Camera.main;
     public CinemachineVirtualCamera ActiveCamera;
-
+    [SerializeField] CinemachineVirtualCamera[] cameras;
+    
     public void ChangeCamera(int index)
     {
         ActiveCamera.SetActiveGameObject(false);

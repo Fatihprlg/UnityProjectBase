@@ -7,18 +7,17 @@ using UnityEngine.Events;
 
 public class LessonModel : MonoBehaviour
 {
-    public bool selfManaged;
-    public bool playByTrigger;
-    public float playDelay;
+    public float PlayDelay;
     public UnityEvent OnLessonPlay;
     public UnityEvent OnLessonStop;
-    [SerializeField] private string plainText;
-    [SerializeField] private TextMeshProUGUI plainTxtObj;
-    
+    public RectTransform FingerTransform;
+    public string PlainText;
+    public TextMeshProUGUI PlainTxtObj;
+
     public virtual void PlayLesson()
     {
         transform.localScale = Vector3.zero;
-        plainTxtObj.text = plainText;
+        PlainTxtObj.text = PlainText;
         gameObject.SetActive(true);
         transform.DOScale(1, .3f).OnComplete(() =>
         {

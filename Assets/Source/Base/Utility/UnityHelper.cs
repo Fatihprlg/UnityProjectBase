@@ -825,7 +825,7 @@
 
     }
 
-    public static class Meshs
+    public static class Meshes
     {
         public static List<Vector3> GetOutlineVertices(Mesh mesh, float height)
         {
@@ -1053,7 +1053,7 @@
 
         public static List<Vector2> GetHalfLoopPoints(Mesh mesh, float min, float max, float sensitve, Vector3 dir)
         {
-            List<Vector2> verticalPoints = new List<Vector2>();
+            var verticalPoints = new List<Vector2>();
             int count = (int)Mathf.Abs((min - max) / sensitve) + 1;
             float height = min;
             int triangleCount = mesh.triangles.Length / 3;
@@ -1062,24 +1062,24 @@
             {
                 for (int i = 0; i < triangleCount; i++)
                 {
-                    Vector3[] points = Helpers.Meshs.GetABEdge(mesh, i);
-                    Vector3 point = (Helpers.Meshs.GetIntersectionPoint(points[0], points[1], height, dir));
+                    var points = GetABEdge(mesh, i);
+                    Vector3 point = (GetIntersectionPoint(points[0], points[1], height, dir));
                     if (point != Vector3.zero)
                     {
                         verticalPoints.Add(new Vector2(Vector2.Distance(Vector2.zero, new Vector2(point.x, point.z)), height));
                         break;
                     }
 
-                    points = Helpers.Meshs.GetBCEdge(mesh, i);
-                    point = (Helpers.Meshs.GetIntersectionPoint(points[0], points[1], height, dir));
+                    points = GetBCEdge(mesh, i);
+                    point = (GetIntersectionPoint(points[0], points[1], height, dir));
                     if (point != Vector3.zero)
                     {
                         verticalPoints.Add(new Vector2(Vector2.Distance(Vector2.zero, new Vector2(point.x, point.z)), height));
                         break;
                     }
 
-                    points = Helpers.Meshs.GetCAEdge(mesh, i);
-                    point = (Helpers.Meshs.GetIntersectionPoint(points[0], points[1], height, dir));
+                    points =GetCAEdge(mesh, i);
+                    point = GetIntersectionPoint(points[0], points[1], height, dir);
                     if (point != Vector3.zero)
                     {
                         verticalPoints.Add(new Vector2(Vector2.Distance(Vector2.zero, new Vector2(point.x, point.z)), height));

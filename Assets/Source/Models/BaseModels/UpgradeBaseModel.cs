@@ -9,7 +9,6 @@ public class UpgradeBaseModel
 {
     public string name;
     public int id;
-    [SerializeField] protected int tutorialPrice;
     [SerializeField] protected int defPrice;
     [SerializeField] protected float pricePerLevel;
     [SerializeField] protected float pricePerMap;
@@ -24,10 +23,6 @@ public class UpgradeBaseModel
 
     public virtual int GetCurrentPrice()
     {
-        if (!TutorialHandler.isTutorialEnd && tutorialPrice != 0 && currentUpgradeLevel == 1)
-        {
-            return tutorialPrice;
-        }
         currentPrice = Convert.ToInt32(defPrice + (pricePerMap * CurrentMapIndex) + Mathf.Pow(currentUpgradeLevel, ( pricePerLevel) + (CurrentMapIndex + 1)));
         return currentPrice;
     } 

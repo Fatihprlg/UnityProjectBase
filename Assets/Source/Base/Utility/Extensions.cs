@@ -121,6 +121,14 @@ public static class Extensions
 
     #region Unity Properties
 
+    public static Vector2 WorldToScreenPoint(this Vector3 targetPos, Camera camera, Canvas canvas)
+    {
+        Vector2 myPositionOnScreen = camera.WorldToScreenPoint(targetPos);
+        float scaleFactor = canvas.scaleFactor;
+        Vector2 result = new (myPositionOnScreen.x / scaleFactor, myPositionOnScreen.y / scaleFactor);
+        return result;
+    }
+    
     public static ParticleSystem SetStartColor(this ParticleSystem particleSystem, Color color)
     {
         var main = particleSystem.main;

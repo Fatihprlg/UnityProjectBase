@@ -5,22 +5,24 @@ using UnityEngine;
 
 public class ClickObjectLessonModel : LessonModel
 {
-    [SerializeField] Transform objectToClick;
-    [SerializeField] RectTransform finger;
-    [SerializeField] Canvas canvas;
-    [SerializeField] Camera mainCam;
-
+    public Transform objectToClick;
+    public Canvas canvas;
+    private LayerMask objLayerMask;
+    private Ray ray;
+    private Camera mainCam;
     public override void PlayLesson()
     {
-        finger.anchoredPosition = WorldToScreenPoint(mainCam, canvas, objectToClick.position);
-        
+        objLayerMask = objectToClick.gameObject.layer;
+        mainCam = CameraController.MainCamera;
+        FingerTransform.anchoredPosition = objectToClick.position.WorldToScreenPoint(mainCam, canvas);
         base.PlayLesson();
     }
-    private Vector2 WorldToScreenPoint(Camera camera, Canvas canvas, Vector3 targetPos)
+
+    private void Update()
     {
-        Vector2 myPositionOnScreen = camera.WorldToScreenPoint(targetPos);
-        float scaleFactor = canvas.scaleFactor;
-        var result = new Vector2(myPositionOnScreen.x / scaleFactor, myPositionOnScreen.y / scaleFactor);
-        return result;
+        if (!Input.GetMouseButtonDown(0)) return;
+        ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        if(!Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, objLayerMask)) return;
+        if(hit.collider.gameObject == objectToClick.gameObject) StopLesson();
     }
 }
