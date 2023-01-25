@@ -367,18 +367,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a136cad5327ff4dfbadae09b3b8746aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playDelay: 0
+  PlayDelay: 0
   OnLessonPlay:
     m_PersistentCalls:
       m_Calls: []
   OnLessonStop:
     m_PersistentCalls:
       m_Calls: []
-  plainText: Click Button!
-  plainTxtObj: {fileID: 1882386570}
-  buttonPos: {fileID: 0}
-  buttonToClick: {fileID: 0}
-  finger: {fileID: 639916066}
+  FingerTransform: {fileID: 639916066}
+  PlainText: Click Button
+  PlainTxtObj: {fileID: 1882386570}
+  FingerScaleUpDownDuration: 1.5
+  ButtonToClick: {fileID: 0}
 --- !u!1 &150622919
 GameObject:
   m_ObjectHideFlags: 0
@@ -7291,9 +7291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24830a02ae003410eb0dc82dc6a24804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ActiveCamera: {fileID: 313142529}
   cameras:
   - {fileID: 313142529}
-  ActiveCamera: {fileID: 313142529}
 --- !u!1 &1487457456
 GameObject:
   m_ObjectHideFlags: 0
