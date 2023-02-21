@@ -12076,7 +12076,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7474832031066321771}
+        - m_Target: {fileID: 7474832030329561097}
           m_TargetAssemblyTypeName: SettingsViewModel, Assembly-CSharp
           m_MethodName: SettingsMenuTrigger
           m_Mode: 6
