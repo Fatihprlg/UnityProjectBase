@@ -1,13 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 public class CameraController : ControllerBase
 {
-    public static readonly Camera MainCamera = Camera.main;
+    public static Camera MainCamera { get; private set; }
     public CinemachineVirtualCamera ActiveCamera;
     [SerializeField] CinemachineVirtualCamera[] cameras;
-    
+
+    private void Awake()
+    {
+        MainCamera = Camera.main;
+    }
+
     public void ChangeCamera(int index)
     {
         ActiveCamera.SetActiveGameObject(false);

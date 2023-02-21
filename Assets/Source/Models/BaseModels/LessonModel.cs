@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
@@ -14,6 +12,15 @@ public class LessonModel : MonoBehaviour
     public string PlainText;
     public TextMeshProUGUI PlainTxtObj;
 
+
+    public void SetDefaults(float delay, string text, Vector2 anchoredTextPos)
+    {
+        PlayDelay = delay;
+        PlainText = text;
+        PlainTxtObj.text = text;
+        PlainTxtObj.rectTransform.anchoredPosition = anchoredTextPos;
+    }
+    
     public virtual void PlayLesson()
     {
         transform.localScale = Vector3.zero;
