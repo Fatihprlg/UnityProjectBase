@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
   m_Name: Vibration Manager
   m_EditorClassIdentifier: 
-  moduleName: Vibration manager
-  shortDescription: "Vibrationlar\u0131 kontrol eden NonMonoBased bir s\u0131n\u0131ft\u0131r."
-  fullDescription: "\u0130\xE7erisinde bulunan static metodlar \xE7a\u011F\u0131r\u0131l\u0131p
-    VibrationTypes enum'\u0131 kullan\u0131larak istenilen titre\u015Fim verilebilir.
-    Metoda treshold verilerek \xF6nceki titre\u015Fimden itibaren verilen saniye
-    ge\xE7mediyse vibrasyonu \xE7al\u0131\u015Ft\u0131rmamas\u0131 sa\u011Flanabilir.
-    Ayr\u0131ca Titre\u015Fimi a\xE7\u0131p kapatmak i\xE7in de kullan\u0131labilir."
+  moduleName: Vibration Manager
+  shortDescription: 'The Vibration Manager is a static class that can be accessed
+    from anywhere in your game. '
+  fullDescription: "The Vibration Manager is a static class that can be accessed
+    from anywhere in your game. \nHere's how you can use it:\n\tCall the static methods
+    in the Vibration Manager and use the \"Vibration Types\" enum to give the desired
+    vibration.\n\tTo ensure that the vibration does not start if the given second
+    has not passed since the previous vibration, give a threshold value to the method.\n\tUse
+    the Vibration Manager to turn vibration on or off.\n"
   subPages: []
   images: []

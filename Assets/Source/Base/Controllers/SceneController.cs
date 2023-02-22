@@ -10,8 +10,8 @@ public class SceneController : MonoSingleton<SceneController>, ICrossSceneObject
     public SceneModel CurrentScene => currentScene;
     public UnityEvent<SceneModel> OnSceneLoad;
     public UnityEvent<SceneModel> OnSceneUnload;
-    [SerializeField] SceneModel[] scenes;
-    [SerializeField] SceneModel mainScene;
+    [SerializeField] private SceneModel[] scenes;
+    [SerializeField] private SceneModel mainScene;
     [Dependency, SerializeField] private SceneLoadingViewModel loadingScreen;
     private SceneModel currentScene;
     

@@ -13,11 +13,20 @@ MonoBehaviour:
   m_Name: Camera Controller
   m_EditorClassIdentifier: 
   moduleName: Camera Controller
-  shortDescription: "Sahnedeki cinemachine virtual camera objelerini kontrol etmeye
-    ve aralar\u0131nda ge\xE7i\u015F yapmaya yarayan controller objesi."
-  fullDescription: "Sahnede Setup objesi i\xE7erisinde yer alan CameraController
-    alt\u0131nca MainCamera ve sahnede bulunan di\u011Fer b\xFCt\xFCn virtual camera
-    \xF6\u011Felerini tutar. Kameralar aras\u0131nda ge\xE7i\u015F yapmak i\xE7in
-    CameraController scriptinin ChangeCamera(int cameraIndex) metodu \xE7a\u011F\u0131r\u0131l\u0131r."
+  shortDescription: ' The Camera Controller holds the Main Camera and all other virtual
+    camera elements in the scene under the Setup object on the scene. To switch between
+    cameras, you can call the ChangeCamera(int cameraIndex) method of the Camera
+    Controller class.'
+  fullDescription: ' The Camera Controller holds the Main Camera and all other virtual
+    camera elements in the scene under the Setup object on the scene. To switch between
+    cameras, you can call the ChangeCamera(int cameraIndex) method of the Camera
+    Controller class.
+
+    Scene Controller: The Scene Controller manages scene transitions
+    and refresh operations. It shows the loading screen while loading scenes asynchronously.
+    It is a singleton object that can be used between scenes, allowing you to access
+    the desired section and perform scene transitions.
+
+'
   subPages: []
   images: []

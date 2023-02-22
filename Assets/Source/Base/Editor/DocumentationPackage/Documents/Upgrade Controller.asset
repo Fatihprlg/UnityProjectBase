@@ -12,19 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
   m_Name: Upgrade Controller
   m_EditorClassIdentifier: 
-  moduleName: UpgradeController
-  shortDescription: "Oyun i\xE7i geli\u015Ftirmeleri kontrol etmeyi sa\u011Flayan
-    controller \xF6\u011Fesidir. Geli\u015Ftirmeleri yapar, kaydeder ve ekrana yans\u0131t\u0131r.\n\n"
-  fullDescription: "Oyun i\xE7i geli\u015Ftirmeleri kontrol eden controller \xF6\u011Fesidir.
-    Oyun ana ekran\u0131 i\xE7erisinde blunan Upgrade butonlar\u0131na t\u0131kland\u0131\u011F\u0131nda
-    olu\u015Fmas\u0131 gereken Upgade eventini i\xE7erir. Kullan\u0131m i\xE7in UpgradeScreen
-    i\xE7erisinde bulunan butonlara UpgradeController \xF6\u011Fesi  s\xFCr\xFCklenerek
-    i\xE7erisinde bulunan upgrade fonksiyonu \xE7a\u011F\u0131r\u0131lmal\u0131d\u0131r.\n\n{0}\n\nUpgrade
-    Controller i\xE7erisinde UpgradeModel t\xFCr\xFCnden bir liste tutar. Bu model
-    upgrade tipinin verilerini tutan bir s\u0131n\u0131ft\u0131r. Edit\xF6r \xFCzerinden
-    yeni upgrade t\xFCrleri eklenerek yap\u0131lacak upgrade fonksiyonlar\u0131nda
-    indexe ba\u011Fl\u0131 olarak kullan\u0131labilir.\n\n{1}\n\nYap\u0131lacak Upgrade
-    ile ilgili b\xFCt\xFCn bilgileri upgradeModel objesinden \xE7ekmek m\xFCmk\xFCnd\xFCr.\n\n\n"
+  moduleName: Upgrade Controller
+  shortDescription: The 'Upgrade Controller' element controls in-game enhancements.
+    It includes the upgrade events that will occur when the upgrade buttons on the
+    game main screen are clicked.
+  fullDescription: 'The ''Upgrade Controller'' element controls in-game enhancements.
+    It includes the upgrade events that will occur when the upgrade buttons on the
+    game main screen are clicked. To use it, you need to call the appropriate upgrade
+    function by dragging the ''Upgrade Controller'' item to the buttons in the ''Upgrade
+    Screen''.
+
+    It maintains a list of type ''Upgrade Model'' in the ''Upgrade
+    Controller''. This model is a class that holds the data of the upgrade type.
+    It can be used to add new upgrade types through the editor by depending on the
+    index in the upgrade functions to be made.
+
+
+    {0}
+
+
+    It is possible to
+    pull all the information about the upgrade from the ''upgrade model'' object.
+    The ''Upgrade Controller'' class is designed to create only one interface, as
+    upgrade functions can vary from game to game.
+
+
+
+    {1}
+
+
+
+
+
+'
   subPages: []
   images:
   - {fileID: 2800000, guid: d3c91a4ebafab4982a18056fc4468e6c, type: 3}

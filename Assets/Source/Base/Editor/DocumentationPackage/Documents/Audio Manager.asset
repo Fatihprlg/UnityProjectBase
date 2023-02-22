@@ -12,18 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
   m_Name: Audio Manager
   m_EditorClassIdentifier: 
-  moduleName: AudioManager
-  shortDescription: "Oyun i\xE7erisinde ses dosyalar\u0131n\u0131 oynatmak i\xE7in
-    kullan\u0131lan Manager objesidir. Singleton olarak bulundu\u011Fundan istenilen
-    yerden \xE7a\u011F\u0131r\u0131labilir."
-  fullDescription: "AudioManager objesi sahnede bulunan Monobased bir s\u0131n\u0131ft\u0131r.
-    alt\u0131nda \xFC\xE7 adet AudioSource bulundurur. \u0130\xE7erisinde Audios
-    tipinde bir scripable obje tutar. bu obje i\xE7erisinde AudioModel t\xFCr\xFCnden
-    bir liste tutar. Bu liste i\xE7erisine oynat\u0131lacak olan SFX ler eklenir
-    ve gerekli bilgiler girilir. AudioManager i\xE7erisinden ses oynatmak i\xE7in
-    basitce PlaySFX metodunun t\xFCrleri \xE7a\u011F\u0131r\u0131labilir. Daha fazla
-    metod incelemek i\xE7in kod dosyas\u0131n\u0131 inceleyebilirsiniz.\nAyr\u0131ca
-    sesi kapatmak veya d\xFCzeyini ayarlamak gibi i\u015Fleri de AudioManager i\xE7erisinden
-    yapabilirsiniz."
+  moduleName: Audio Manager
+  shortDescription: The 'Audio Manager' is a 'MonoBehaviour' class that contains
+    three 'Audio Sources' in the scene. It also has a 'Scriptable' of type 'Audios'
+    that stores an object keeping a list of 'Audio Model' types.
+  fullDescription: The 'Audio Manager' is a 'MonoBehaviour' class that contains three
+    'Audio Sources' in the scene. It also has a 'Scriptable' of type 'Audios' that
+    stores an object keeping a list of 'Audio Model' types. You can add 'Sound Effects'
+    (SFX) to this list and enter necessary information for each one. To play sound
+    effects, you can simply call the 'PlaySFX' method, and to play music, you can
+    use the 'PlayMusic' method. Additionally, you can mute the sound or adjust the
+    volume from the 'Audio Manager'.
   subPages: []
   images: []

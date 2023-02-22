@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Particle Base Model
   m_EditorClassIdentifier: 
   moduleName: Particle Base Model
-  shortDescription: "particlelar\u0131 y\xF6netmeye yarayan script."
-  fullDescription: "Particlelara verilmesi gereken bu script verildi\u011Fi objede
-    bulunan Particle System componentini otomatik olarak al\u0131r. Bu Particle sistemini
-    oynatmak, durdurmak ve initialize etmek ad\u0131na kullan\u0131l\u0131r.\n\n\n "
+  shortDescription: --
+  fullDescription: This script, which should be given to particles, automatically
+    takes the Particle System component in the object it is given. It is used to
+    play, pause and initialize the Particle system.
   subPages: []
   images: []

@@ -10,6 +10,7 @@ public class ClickObjectLessonModel : LessonModel
     private LayerMask objLayerMask;
     private Ray ray;
     private Camera mainCam;
+
     public override void PlayLesson()
     {
         objLayerMask = objectToClick.gameObject.layer;

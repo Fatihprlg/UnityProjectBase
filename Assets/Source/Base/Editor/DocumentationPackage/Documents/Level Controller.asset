@@ -13,55 +13,68 @@ MonoBehaviour:
   m_Name: Level Controller
   m_EditorClassIdentifier: 
   moduleName: Level Controller
-  shortDescription: "Bu template k\u0131saca level i\xE7indeki objelerin transformlar\u0131n\u0131
-    ve yolu kaydeder, istendi\u011Fi zaman y\xFCkler veya override eder. \u0130\xE7erisinde
-    levellarda bulunan objelerin transformlar\u0131n\u0131 tutan json dosyas\u0131n\u0131
-    bulundurur.\n\n\n"
-  fullDescription: "Genel Bak\u0131\u015F\n\nLevellar\u0131 LevelModel tipinde json
-    dosyas\u0131na kaydeden, okuyan ve olu\u015Fturan s\u0131n\u0131ft\u0131r. Levelda
-    sahnede aktif olmas\u0131 istenen objelerin verileri LevelModel s\u0131n\u0131f\u0131na
-    eklenmelidir. Ba\u015Flang\u0131\xE7ta yaln\u0131zca i\xE7erisinde PoolItems
-    ve WorldItems olarak iki adet tip bulundurur. Bu tipler ItemDataModel s\u0131n\u0131f\u0131ndan
-    t\xFCremi\u015F veri s\u0131n\u0131flar\u0131d\u0131r.   \n{0}\n\nPoolItemDataModel:
-    Sahnede bulunan MultiplePool modellerinin i\xE7erisinden istenilen objeleri kaydedilen
-    pozisyonlarda aktif eder. Bu objeleri kaydetmek i\xE7in sahnede kaydolmas\u0131
-    gereken objelere PoolItemModel s\u0131n\u0131f\u0131n\u0131 eklemeniz gerekmektedir.
-    B\xF6ylece LevelAdapter sahnede aktif edip ayarlad\u0131\u011F\u0131n\u0131z
-    objeleri al\u0131r ve verilerini json dosyas\u0131na ekler.\n\nWorldItemDataModel:
-    Sahnede bulunan Pool i\xE7erisinde olmayan b\xFCt\xFCn objeler i\xE7in kullan\u0131labilir.
-    Kullan\u0131m\u0131 i\xE7in yine objelere WorldItemModel componentinin eklenmesi
-    gerekmektedir.\n\nNOT: LevelAdapter leveli kaydederken yaln\u0131zca sahnede
-    bulunan, adapter i\xE7erisinde tan\u0131ml\u0131 ve aktif olan objeleri al\u0131r.
-    E\u011Fer LevelModel i\xE7erisine kaydedilmesini istedi\u011Finiz yeni bir obje
-    eklerseniz bunu levelAdapter'a tan\u0131tmal\u0131s\u0131n\u0131z!\n\n{1}\n\n{2}\n\nLevel
-    Load/Override Etmek:  Level load etmeden \xF6nce sahnemizi temizlemek i\xE7in
-    Clear Scene butonuna bas\u0131yoruz. Daha sonra Load etmek istedi\u011Fimiz level
-    indexini girerek daha \xF6nce olu\u015Fturmu\u015F oldu\u011Fumuz levellardan
-    birini load edebiliriz. Bu levelda istedi\u011Fimiz de\u011Fi\u015Fiklikleri
-    yapt\u0131ktan sonra ise bu haliyle ayn\u0131 level\u0131n \xFCst\xFCne yazmak
-    istersek Override Level butonuna basmam\u0131z yeterli olacakt\u0131r. B\xF6ylece
-    var olan bir levelda istedi\u011Fimiz de\u011Fi\u015Fiklikleri yap\u0131p kaydetmi\u015F
-    oluyoruz.\n\nSave Level: Leveli olu\u015Fturduktan ve yukar\u0131daki ad\u0131mlar\u0131
-    izledikten sonra Save Level butonuna basarak leveli json dosyas\u0131na aktarabilirsiniz.\n\n\nE\u011Fer
-    aktif olarak load etti\u011Fimiz levelin \xF6zelliklerini g\xF6rmek istersek 
-    bu levella ilgili b\xFCt\xFCn bilgileri Active Level sekmesinin alt\u0131nda
-    g\xF6rebiliriz.\n\n{3}\n\nLevellar\u0131 RubyFramework Kullanarak Remote Bazl\u0131
-    Yapma\n\nBu \xF6zellik i\xE7in Ruby Framework'\xFCn pro s\xFCr\xFCm\xFCn\xFC
-    a\xE7mal\u0131s\u0131n\u0131z. Bunun i\xE7in \xFCst k\u0131s\u0131mdaki ToolBar'dan
-    RubyTools>Framework>Options penceresinden IsLiteVersion kutucu\u011Fundaki i\u015Fareti
-    kald\u0131r\u0131p alt\u0131ndaki butona bas\u0131n\u0131z. Daha sonra LevelController
-    i\xE7ersinde bulunan yorum sat\u0131r\u0131na \xE7evirilmi\u015F olan RubyFramework.Settings.SetLevelsJson(JsonHelper.ToJson(levelModels));
-    ve levelModels = JsonHelper.LoadJson<LevelList>(RubyFramework.Settings.LevelsJson);
-    sat\u0131rlar\u0131n\u0131 UnComment yap\u0131n\u0131z. Bu ad\u0131mdan \xF6nce
-    daha \xF6nce a\xE7m\u0131\u015F oldu\u011Funuz RubyFramework penceresinden Create
-    or Open RubyFramework Settings butonuna bas\u0131p Assetler i\xE7erisinde arama
-    k\u0131sm\u0131na RubyFrameworkSettings.Game.cs dosyas\u0131n\u0131 bulun. O
-    dosyay\u0131 kod edit\xF6r\xFCn\xFCzde a\xE7arak i\xE7erisine \u015Fu sat\u0131rmal\u0131
-    ekleyin:\n\n[Header(\"LevelDatas\")]\n\n#if RUBY_FRAMEWORK\n    [RubyConfig(\"levelsJson\")]\n#endif\n   
-    [SerializeField] private string levelsJson;\n\n    public string LevelsJson =>
-    levelsJson;\n    \n    public void SetLevelsJson(string levels) => levelsJson
-    = levels;\n    \n\nBu a\u015Famadan sonra Level verilerini Remote \xFCzerinden
-    de\u011Fi\u015Ftirebilirsiniz."
+  shortDescription: 'The ''Level Controller'' class is responsible for saving, reading,
+    and creating sections in a ''json'' file of type ''Level Model''. To activate
+    objects on the stage in a section, their data should be added to the ''Level
+    Model'' class. The ''Level Controller'' uses the ''Level Adapter'' class as a
+    helper class when loading and saving partitions.
+
+'
+  fullDescription: 'The ''Level Controller'' class is responsible for saving, reading,
+    and creating sections in a ''json'' file of type ''Level Model''. To activate
+    objects on the stage in a section, their data should be added to the ''Level
+    Model'' class. The ''Level Controller'' uses the ''Level Adapter'' class as a
+    helper class when loading and saving partitions. This class contains functions
+    that are executed when saving or restoring objects in the scene.
+
+    To make
+    the editor window more user-friendly, buttons have been added for recording,
+    editing, loading, and cleaning the scene. Initially, there are two types of items
+    available: ''Pool Items'' and ''World Items''. These types are data classes derived
+    from the ''Item Data Model'' class.
+
+
+    {0}
+
+
+    The ''Pool Item Data Model''
+    activates the desired objects from the ''Multiple Pool'' models in the scene
+    at the saved positions. To register these objects, the ''Pool Item Model'' class
+    should be added to the objects that need to be registered in the scene. The ''Level
+    Adapter'' then takes the objects you have activated on the stage and adds their
+    data to the json file.
+
+    The ''World Item Data Model'' can be used for all
+    objects in the scene that are not in the object pool. To use it, the ''World
+    Item Model'' component must be added to the objects.
+
+
+    NOTE: LevelAdapter
+    takes only the objects in the scene, defined and active in the adapter while
+    saving the level. If you add a new object that you want to be saved in the LevelModel,
+    you must introduce it to the levelAdapter!
+
+
+    {1}
+
+
+    {2}
+
+
+    To load
+    an episode, you should press the ''Clear Scene'' button to clean the scene first.
+    Then, you can load one of the sections that were created before by entering the
+    section index that you want to load. After making the desired changes in this
+    section, you can press the ''Override Level'' button to overwrite the same section.
+    This way, desired changes can be made and saved in an existing section. If you
+    want to see the features of the active section, all information about this section
+    can be seen under the ''Active Level'' tab. The sections can be managed by calling
+    the functions mentioned in the code.
+
+
+    {3}
+
+'
   subPages:
   - {fileID: 11400000, guid: e06250c8d16a54d2ab5396aa73bf387d, type: 2}
   images:

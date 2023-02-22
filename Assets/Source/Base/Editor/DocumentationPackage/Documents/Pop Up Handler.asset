@@ -13,22 +13,39 @@ MonoBehaviour:
   m_Name: Pop Up Handler
   m_EditorClassIdentifier: 
   moduleName: Pop Up Handler
-  shortDescription: "Ekrana istenilen zaman pop up ekranlar\u0131 \xE7\u0131kart\u0131lmas\u0131n\u0131
-    sa\u011Flayan yap\u0131. Custom pop up ekranlar\u0131 d\xFCzenlenmesini destekler.
-    Bunun yan\u0131nda \xE7\u0131kacak olan pop up \xF6zellikleri runtime'da da atanabilir."
-  fullDescription: "Pop Up Handler s\u0131n\u0131f\u0131, Pop Up View Model \xF6\u011Fesini
-    y\xF6netir ve verilen ba\u015Fl\u0131k, yaz\u0131, buton de\u011Ferlerine g\xF6re
-    Pop Up ekranlar\u0131 \xE7\u0131kart\u0131r. Kullanmak i\xE7in sahnede bir PopUp
-    handler componenti i\xE7eren obje olu\u015Fturun ve ayn\u0131 \u015Fekilde bir
-    Canvas'\u0131n alt\u0131na Pop Up View Model olu\u015Fturup alt\u0131na gerekli
-    \xF6zellikleri i\xE7eren Pop Up Screen ekleyin. (MainScene i\xE7erisinde default
-    olarak bulunur). Daha sonra bu ekran\u0131 kod i\xE7erisinden \xE7a\u011F\u0131rmak
-    i\xE7in singleton olan PopUpHandler s\u0131n\u0131f\u0131n\u0131 kullanabilirsiniz.
-    S\u0131n\u0131f i\xE7erisinde pop up \xE7a\u011F\u0131rmak i\xE7in ShowPopUp
-    fonksiyonunun bi\xE7imlerini, ekranda g\xF6sterdi\u011Finiz Pop Up ekranlar\u0131n\u0131
-    gizlemek i\xE7in ise HidePopUp fonksiyonlar\u0131n\u0131 kullanabilirsiniz. Ard
-    arda birden fazla Pop Up ekran\u0131n\u0131 bir \xF6ncekini gizlemeden a\xE7arsan\u0131z,
-    Handler bu pop up'lar\u0131 bir kuyruk yap\u0131s\u0131na atarak ard arda ekrandaki
-    pop up gizlendik\xE7e a\xE7acakt\u0131r."
+  shortDescription: The 'Pop Up Handler' class manages the 'Pop Up View Model' and
+    produces 'Pop Up' screens according to the given title, text, and button values.
+    To use it, an object containing a 'Pop Up Handler' component is created on the
+    scene, and a 'Pop Up View Model' is created under a 'Canvas,' and a 'Pop Up Screen'
+    containing the necessary features is added under it (available by default in
+    the 'Main Scene').
+  fullDescription: 'The ''Pop Up Handler'' class manages the ''Pop Up View Model''
+    and produces ''Pop Up'' screens according to the given title, text, and button
+    values. To use it, an object containing a ''Pop Up Handler'' component is created
+    on the scene, and a ''Pop Up View Model'' is created under a ''Canvas,'' and
+    a ''Pop Up Screen'' containing the necessary features is added under it (available
+    by default in the ''Main Scene''). Then, the ''Singleton'' ''Pop Up Handler''
+    class can be used to call this screen from within the code. The ''ShowPopUp''
+    function can be used to call a ''pop up'' in the classroom, and the ''HidePopUp''
+    function can be used to hide the ''Pop Up'' screens displayed on the screen.
+    If multiple ''Pop Up'' screens are summoned in a row without hiding the previous
+    one, the ''Handler'' will throw these ''pop ups'' into a queue structure and
+    will open one after the other as the ''pop up'' on the screen is hidden. The
+    ''Pop Up Handler'' class also provides an option to add a callback function that
+    will be called when the user clicks on a button in the ''pop up'' screen.
+
+    In
+    the ''Pop Up Screen'' object, there are two ''Pop Up'' button objects. These
+    buttons are used to execute the callback functions added to the ''Pop Up Handler''
+    class when clicked. When adding a new ''pop up'' screen, the button names should
+    be changed according to the desired button texts, and the ''ButtonAction'' event
+    of the ''ButtonComponent'' script on the button should be assigned to the corresponding
+    callback function.In the editor window, you can see the list of ''pop up'' screens
+    that have been created, and you can delete or edit them as desired. You can also
+    create a new ''pop up'' screen by clicking the ''Create New Pop Up'' button and
+    filling in the necessary information, such as the title, text, and button texts,
+    and assigning the callback functions.
+
+'
   subPages: []
   images: []

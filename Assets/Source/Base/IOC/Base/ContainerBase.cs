@@ -30,8 +30,11 @@ public class Container
             }
             if (this.types.ContainsKey(interfaceType ?? type))
             {
+                key = RemoveSpecialCharacters(key);
                 var regex = new Regex($"{key}[0-9]*$");
-                if (types[interfaceType ?? type].ContainsKey(key ?? string.Empty)) key = key + types[interfaceType ?? type].Count(type => regex.IsMatch(type.Key));
+                
+                while (types[interfaceType ?? type].ContainsKey(key ?? string.Empty)) 
+                    key = $"{key} {types[interfaceType ?? type].Count(type => regex.IsMatch(RemoveSpecialCharacters(type.Key)))}";
                 this.types[interfaceType ?? type].Add(key ?? string.Empty, type);
             }
             else
@@ -58,7 +61,10 @@ public class Container
             throw new Exception("Register type failed. ", ex);
         }
     }
-
+    public static string RemoveSpecialCharacters(string str)
+    {
+        return Regex.Replace(str, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
+    }
     public T Inject<T>(object obj)
     {
         return (T)this.Inject(typeof(T), obj);

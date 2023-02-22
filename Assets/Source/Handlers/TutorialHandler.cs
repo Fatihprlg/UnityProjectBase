@@ -11,6 +11,7 @@ public class TutorialHandler : MonoSingleton<TutorialHandler>, IInitializable, I
     public void Initialize()
     {
         destroyGameObjectOnDuplicate = true;
+        base.Initialize();
         HandleDontDestroy();
         //TODO: Addressables support
         lessons = Resources.LoadAll<LessonModel>("LessonPrefabs").ToList();
