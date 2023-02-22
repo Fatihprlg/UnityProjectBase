@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: MultiplePoolModel
   m_EditorClassIdentifier: 
   moduleName: Multiple Pool Model
-  shortDescription: "Birden \xE7ok pool objesini tutan obje."
-  fullDescription: "Multiple Pool Model objesi birden fazla pool objesini tutar.
-    Child obje olarak bu objenin alt\u0131na eklenen objeler Pool Model componentini
-    i\xE7ermelidir. Child objelerdeki Poollar\u0131 \xE7ekip sisteme tan\u0131mlamak
-    i\xE7in GetPools butonuna t\u0131klamak yeterlidir.\n"
+  shortDescription: --
+  fullDescription: The Multiple Pool Model object holds more than one pool object.
+    Objects added under this object as a child object must contain the Pool Model
+    component. It is sufficient to click the GetPools button to pull the Pools from
+    the Child objects and define them to the system.
   subPages:
   - {fileID: 11400000, guid: a66d62f8e80c73545a8ae332cbe4984c, type: 2}
   images: []

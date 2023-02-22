@@ -13,19 +13,37 @@ MonoBehaviour:
   m_Name: PostProcessor
   m_EditorClassIdentifier: 
   moduleName: Post Processor
-  shortDescription: "Sahnedeki volume de\u011Ferlerini haz\u0131r post process ayarlar\u0131na
-    \xE7eken edit\xF6r scriptidir."
-  fullDescription: "PostProcessor componenti i\xE7erisinde iki adet profil bulundurur.
-    Bunlardan Classic olan standart ve basit bir g\xF6r\xFCnt\xFC elde etmenizi sa\u011Flar.
-    Contrast profili ise daha farkl\u0131 renk ayarlar\u0131 ve efektler i\xE7erir.
-    bunlardan birini se\xE7mek i\xE7in ismi yazan butona basman\u0131z yeterlidir.
-    PostProcessor otomatik olarak volume i\xE7erisine profili ekler. Buraya istenirse
-    custom profiller de eklenebilir. otomatik olarak eklenen profil buton \u015Feklinde
-    belirecektir. \n\n{0}\n\nProfil i\xE7erisinde ayar yaparken Color Lookup i\xE7erisindeki
-    lookup texture resmini de\u011Fi\u015Ftirerek farkl\u0131 g\xF6r\xFCt\xFCler
-    elde edebilirsiniz. Burada Assets/Base/CubePostProcess/Resources/LUT klas\xF6r\xFC
-    alt\u0131nda bulunan texturelardan se\xE7erek de\u011Fi\u015Fiklik yapabilir,
-    uygun g\xF6r\xFCnt\xFCy\xFC bulabilirsiniz."
+  shortDescription: 'Post processing is a commonly used technique in Unity to apply
+    visual effects and make adjustments to the image by giving some effects to the
+    camera. The ''PostProcessor'' module includes two pre-made image profiles designed
+    for this purpose, which can be easily changed via the editor. It provides a standard
+    and simple image profile, called ''Classic'', and a more advanced profile, called
+    ''Contrast'', which includes more color settings and effects. '
+  fullDescription: 'Post processing is a commonly used technique in Unity to apply
+    visual effects and make adjustments to the image by giving some effects to the
+    camera. The ''PostProcessor'' module includes two pre-made image profiles designed
+    for this purpose, which can be easily changed via the editor. It provides a standard
+    and simple image profile, called ''Classic'', and a more advanced profile, called
+    ''Contrast'', which includes more color settings and effects. To select one of
+    these profiles, simply press the corresponding button in the editor. The ''PostProcessor''
+    module automatically inserts the selected profile into the ''volume''. Additionally,
+    custom profiles can be added to the ''volume'', which will automatically appear
+    as a new button in the editor.
+
+    When adjusting the profile, different images
+    can be obtained by changing the ''lookup texture'' (LUT) picture in the ''Color
+    Lookup'' section. The LUT is used as the ''Color Correction LUT'', which is a
+    texture used to perform color grading in a post-processing effect. Instead of
+    manipulating individual color channels via curves, as with color correction curves,
+    only a single texture is used to produce the corrected image. The appropriate
+    image can be obtained by using the textures located under the ''Assets/Base/PostProcess/Resources/LUT''
+    folder in the project.
+
+
+
+    {0}
+
+'
   subPages: []
   images:
   - {fileID: 2800000, guid: da175660522ac4dc3b3970d201329903, type: 3}

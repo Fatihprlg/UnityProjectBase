@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b9290b04bb5434f8f7031419260349, type: 3}
+  m_Name: Data Handler
+  m_EditorClassIdentifier: 
+  moduleName: Data Handler
+  shortDescription: The 'DataHandler' class is responsible for permanently storing
+    user data. It stores objects derived from the 'Data Model' class as binary files.
+    To access any data from the code, the 'Data' property, which is 'static', is
+    used. For example, 'PlayerDataModel.Data.requested Information' can be used to
+    access 'Player' data. To save changes made to data, the 'DataHandler' automatically
+    saves data using the 'Application Focus' event function within itself.
+  fullDescription: "The 'DataHandler' class is responsible for permanently storing
+    user data. It stores objects derived from the 'Data Model' class as binary files.
+    To access any data from the code, the 'Data' property, which is 'static', is
+    used. For example, 'PlayerDataModel.Data.requested Information' can be used to
+    access 'Player' data. To save changes made to data, the 'DataHandler' automatically
+    saves data using the 'Application Focus' event function within itself. However,
+    the 'DataHandler' editor window provides options to manually save or clear data.
+    \n\n{0}\n\nThe editor window can be accessed from the menubar as My Game Lib>DataHandlerWindow.\nTo
+    Clear All Data, use ClearAllData button in EditorWindow.\nTo create a new 'data
+    model', the user must enter the name of the new data model in the box above the
+    'Create New Data Model' button and click the button. The new 'data model' must
+    then be initialized like other models in the 'Data Handler' class and added to
+    the 'Save' function.\nThe 'GetMoney' button in the editor window can be used
+    to add money while testing. The amount of money to be added must be entered in
+    the box above the button and the button must be pressed.\n"
+  subPages: []
+  images: []

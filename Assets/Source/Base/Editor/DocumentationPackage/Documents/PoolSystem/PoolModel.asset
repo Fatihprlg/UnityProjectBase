@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PoolModel
   m_EditorClassIdentifier: 
   moduleName: Pool Model
-  shortDescription: pool objelerini tutan model.
-  fullDescription: "\u0130\xE7erisinde Pool objelerini tutan modeldir. Child obje
-    olarak eklenen objeler, i\xE7erisinde uygun pool item componentini bulundurmal\u0131d\u0131r.
-    Objeler eklendikten sonra hepsini poola eklemek i\xE7in Initialize On Editor
-    butonuna t\u0131klanmas\u0131 yerelidir. \n"
+  shortDescription: --
+  fullDescription: It is the model that holds the Pool objects inside. Objects added
+    as child objects must contain the appropriate pool item component. After the
+    objects are added, it is necessary to click the Initialize On Editor button to
+    add them all to the pool.
   subPages: []
   images: []

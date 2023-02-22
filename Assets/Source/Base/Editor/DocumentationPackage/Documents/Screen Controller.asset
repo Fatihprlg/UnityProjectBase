@@ -13,30 +13,33 @@ MonoBehaviour:
   m_Name: Screen Controller
   m_EditorClassIdentifier: 
   moduleName: Screen Controller
-  shortDescription: "Oyun i\xE7i ekranlar\u0131 ve bunlar aras\u0131ndaki ge\xE7i\u015Fleri
-    y\xF6neten controller \xF6\u011Fesidir. \u0130\xE7erisinde ekranlar\u0131n Screen
-    t\xFCr\xFCnden listesini tutar. Oyun i\xE7in state de\u011Fi\u015Fimlerine g\xF6re
-    ekran de\u011Fi\u015Fimleri otomatik olarak ayarlanm\u0131\u015Ft\u0131r."
-  fullDescription: "Screen Controller, ekranlar\u0131n listesini, aktif ekran\u0131,
-    ve ekranlar\u0131n otomatik de\u011Fi\u015Ftirilmesini tetiklemek i\xE7in autoChangeScreen
-    isminde bir boolean de\u011Feri tutar. Bu boolean de\u011Fer edit\xF6rden se\xE7ilirse
-    game controller \xF6\u011Fesinin onStateChange eventlerine ekran de\u011Fi\u015Fimlerini
-    i\xE7eren bir metod eklenir. Bu \u015Fekilde her stae de\u011Fi\u015Fiminde uygun
-    ekran da otomatik olarak y\xFCklenir. \nEdit\xF6rde bulunan MainScreenIndex de\u011Feri
-    ise oyun ba\u015Flad\u0131\u011F\u0131nda a\xE7\u0131lacak olan ilk ekran\u0131
-    g\xF6sterir. Ekranlar bu indexten itibaren s\u0131rayla d\xF6nd\xFCr\xFCl\xFCr.
-    MainIndexten \xF6nceki ekranlar ise belirli durumlarda g\xF6sterilecek ekranlard\u0131r(Tutorial,
-    PopUp vs.).\n\nDefault olarak bulunan ekranlar: \n\tLoading Screen: Oyun i\xE7erisinde
-    herhangi bir bekleme, y\xFCklenme a\u015Famas\u0131nda devreye girer.\n\tMain
-    Screen: Oyunun ana men\xFCs\xFCd\xFCr. i\xE7erisinde upgrade screen, oyuncu paras\u0131,
-    level bilgisi vs. bilgiler bulunur. Oyuncu paras\u0131 ve level bilgisi PlayerDataModel
-    objesinden otomatik olarak \xE7ekilir.\n\tGame Screen: Oyun oynarken g\xF6z\xFCken
-    ekrand\u0131r. Oyuncu paras\u0131 ve level bilgisi yine burada da g\xF6z\xFCk\xFCr
-    ve otomatik ayarlan\u0131r.\n\tEndScreen: Level sonu ekran\u0131d\u0131r. E\u011Fer
-    oyuncu ba\u015Far\u0131l\u0131 bir \u015Fekilde leveli tamamlad\u0131ysa Win
-    Screen, aksi taktirde Lose Screen elementini tetikler. \n\tTutorialScreen: Oyuna
-    eklenen Tutoriallar\u0131 i\xE7eren ekran eleman\u0131d\u0131r. Tutorial eklenmediyse
-    bo\u015F bir \u015Fekilde durur. Tutorial olu\u015Fturma dok\xFCmanlarda bulunmaktad\u0131r.\n"
+  shortDescription: 'The ''Screen Controller'' class manages a ''boolean'' value
+    named ''autoChangeScreen'' to trigger the list of screens, the active screen,
+    and automatic switching of screens. If this ''boolean'' value is selected from
+    the editor, a method involving screen changes is added to the ''onStateChange''
+    events of the ''game controller'' element. This way, the appropriate screen is
+    automatically loaded at each state change.
+
+'
+  fullDescription: "The 'Screen Controller' class manages a 'boolean' value named
+    'autoChangeScreen' to trigger the list of screens, the active screen, and automatic
+    switching of screens. If this 'boolean' value is selected from the editor, a
+    method involving screen changes is added to the 'onStateChange' events of the
+    'game controller' element. This way, the appropriate screen is automatically
+    loaded at each state change.\nThe 'MainScreenIndex' value in the editor shows
+    the first screen that will open when the game starts. The screens are rotated
+    sequentially from this index. The screens before the main index are the screens
+    that will be shown in certain situations and are constantly active, such as the
+    Tutorial or PopUp screens.\nThe screens available by default are:\n\tMain Screen:
+    It is the main menu of the game. In the 'upgrade screen', player money, department
+    information, and other information are available. Player money and episode information
+    are automatically retrieved from the 'Player Data Model' object.\n\tGame Screen:
+    It is the screen that appears while playing the game. Player money and chapter
+    information are also displayed here and adjusted automatically.\n\tEnd Screen:
+    It is the section end screen. If the player successfully completed the level,
+    it will show the 'Win Screen', otherwise it will trigger the 'Lose Screen' element.\n\tTutorial
+    Screen: It is the screen element that contains the tutorials added to the game.
+    It stays blank if no training is added."
   subPages:
   - {fileID: 11400000, guid: b25660341d4e2da43a1e8def74da2453, type: 2}
   images: []

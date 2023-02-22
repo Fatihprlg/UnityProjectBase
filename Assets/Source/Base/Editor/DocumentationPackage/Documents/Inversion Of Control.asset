@@ -13,27 +13,54 @@ MonoBehaviour:
   m_Name: Inversion Of Control
   m_EditorClassIdentifier: 
   moduleName: Inversion Of Control (IoC)
-  shortDescription: "Sahnedeki dependencyleri kontrol eden ve yerlerine inject eden
-    yap\u0131d\u0131r. kullan\u0131m\u0131 i\xE7in sahneye bir adet Context ve alt\u0131na
-    da MonoBuilder \xF6\u011Fesi eklenmelidir. Context objesi Initializer'\u0131n
-    en ba\u015F\u0131nda initialize edilmelidir."
-  fullDescription: "Dependency injection yapan bir container, sahnedeki dependencyleri
-    \xE7eken ve ileten builder yap\u0131s\u0131 ve builderlar\u0131 kontrol eden
-    bir Context yap\u0131s\u0131ndan olu\u015Fur. Kullan\u0131m\u0131 olduk\xE7a
-    basit tutulmu\u015Ftur. v1.0 versiyonunda yaln\u0131zca property ve field injection
-    bulunmaktad\u0131r. Bu \xF6zelli\u011Fi kullanabilmek i\xE7in \xF6ncelikle sahne
-    kurulumu yap\u0131mas\u0131 gereklidir. Sahneye Context objesi ve Builder objesi
-    eklenmelidir. Bu objeler \xF6rnek MainScene i\xE7erisinde bulunmaktad\u0131r.\n\n{0}\n\nBu
-    ad\u0131mdan sonra context sahnedeki builder'\u0131, builider da sahnedeki MonoBase
-    classlar\u0131 otomatik olarak her recompile oldu\u011Funda \xE7eker.\n\n{1}\n\nBu
-    ad\u0131mdan sonra kod i\xE7erisinde injection yapmak istedi\u011Finiz filed
-    ve propertylerin yan\u0131na [Dependency] attribute'unu eklemeniz gerekmektedir.
-    Bu ad\u0131mdan sonra ise kodu initialize etti\u011Finiz yerde veya dependency'i
-    kullanmadan \xF6nce this.Inject(); extension metodunu \xE7a\u011F\u0131rman\u0131z
-    yeterli olacakt\u0131r.\n\n{2}\n\nE\u011Fer bir sahnede bir nesne \xF6rne\u011Finden
-    birden fazla varsa ve siz spesifik birini \xE7ekmek istiyorsan\u0131z [Dependency(\"GameObje'nin
-    Ad\u0131\")] \u015Feklinde kullanabilirsiniz. Bunu yapmazsan\u0131z container
-    otomatik olarak ilk buldu\u011Fu objeyi injectleyecektir. \n\n{3}\n\n"
+  shortDescription: "Inversion of Control (IoC) is a design pattern used to manage
+    dependencies in software \narchitecture, including game development. In Unity,
+    it is adapted to the MonoBehaviour class structure and consists of a container
+    that injects dependency, a builder struct that pulls and forwards dependencies
+    in the scene, and a context struct that controls the builders.\n"
+  fullDescription: 'The IoC structure uses a dictionary to keep dependencies and
+    places them where needed. This module is the coded version of the IoC structure
+    by integrating it into the Unity system. It automatically takes all ''MonoBase''
+    classes in the scene and stores them in a dictionary. Instead of creating any
+    dependency, the user qualifies this dependency as ''[Dependency]'' and attaches
+    the object instance of this dependency to that field as the IoC falls.
+
+    To
+    use this feature, the user needs to add the ''Context'' object and the ''Builder''
+    object to the scene. After this step, the builder automatically defines and stores
+    the ''MonoBase'' classes on the stage every time it ''recompiles''. The fields
+    that the user wants to ''inject'' in the code must be qualified as ''[Dependency]''.
+    To initialize the code or before using the dependency, the user can call the
+    ''extension'' method this.Inject(). If there is more than one instance of an
+    object in a scene and the user wants to get a specific one, he can get the reference
+    of the object instance he wants in the form of ''[Dependency("Game Object Name")]''.
+
+
+
+    {0}
+
+
+    Create
+    a context and builder in scene for use it.
+
+
+    {1}
+
+
+    After this step, you
+    need to add the [Dependency] attribute next to the files and properties you want
+    to inject in the code. After this step, where you initialize the code or before
+    using the dependency this.Inject(); Calling the extension method will suffice.
+
+
+    {2}
+
+
+
+    {3}
+
+
+'
   subPages: []
   images:
   - {fileID: 2800000, guid: 4a95ad2d33b804f859a634dc69ccef86, type: 3}

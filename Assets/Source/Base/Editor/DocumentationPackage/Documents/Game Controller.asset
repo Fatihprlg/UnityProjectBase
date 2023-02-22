@@ -13,43 +13,67 @@ MonoBehaviour:
   m_Name: Game Controller
   m_EditorClassIdentifier: 
   moduleName: Game Controller
-  shortDescription: "Oyun d\xF6ng\xFCs\xFCn\xFC, stateleri ve state de\u011Fi\u015Fimleri
-    aras\u0131nda ger\xE7ekle\u015Fecek olaylar\u0131 kontrol eden controller \xF6\u011Fesidir.
-    Sahnede Controllers objesinin alt\u0131nda bulunur. Ge\xE7erli state'i, controllerlar\u0131
-    ve state de\u011Fi\u015Fti\u011Finde ger\xE7ekle\u015Fecek olaylar\u0131 tutar.\n\n"
-  fullDescription: "Game controller \xF6\u011Fesi oyun i\xE7erisindeki geriye kalan
-    controllerlar\u0131n update i\u015Flmelerini de i\xE7erisinde ger\xE7ekle\u015Ftirir.
-    \u0130ste\u011Fe ba\u011Fl\u0131 olarak bu \xF6zellik kullan\u0131labilir. GameController'\u0131n
-    \xE7al\u0131\u015Ft\u0131rmas\u0131n\u0131 istedi\u011Fimiz controller \xF6\u011Felerini,
-    GameController i\xE7erisindeki listeye s\xFCr\xFCkleyip b\u0131rak\u0131yoruz.
-    E\u011Fer Controller'\u0131n sahnedeki t\xFCm controllerlar\u0131 otomatik olarak
-    mapleyip \xE7a\u011F\u0131rmas\u0131n\u0131 isterseniz autoMapContollers kutucu\u011Funu
-    i\u015Faretlemeniz yeterlidir. Bu \xF6\u011Felerin ControllerBase s\u0131n\u0131f\u0131n\u0131
-    miras almas\u0131 gerekmektedir. Bundan sonra i\xE7erisine ControllerUpdate (fixed
-    ve late update de mevcut) metodunu override ederek bu \xF6zelli\u011Fi kullanabiliriz.
-    Bu metod parametre olarak oyunun ge\xE7erli state bilgisini al\u0131r. Controller
-    i\xE7erisinde ger\xE7ekle\u015Ftirilen farkl\u0131 olaylar\u0131n hangi statede
-    \xE7al\u0131\u015Ft\u0131r\u0131l\u0131p hangisinde \xE7al\u0131\u015Ft\u0131r\u0131lmayaca\u011F\u0131n\u0131
-    bu bilgi ile kontrol edebiliriz. \n\n{0}\n\nState de\u011Fi\u015Fimleri aras\u0131nda
-    ger\xE7ekle\u015Fmesini istedi\u011Fimiz olaylar\u0131 yine game controller componenti
-    i\xE7erisindeki onStateChange eventlerinin i\xE7erisine ekleyebiliriz. Buraya
-    ekleyece\u011Fimiz metot i\xE7erisine GameStates enum'\u0131ndan bir parametre
-    almal\u0131d\u0131r. State de\u011Fi\u015Fimi s\u0131ras\u0131nda istedi\u011Fimiz
-    bir state gelmesi durumunda kodumuzu \xE7al\u0131\u015Ft\u0131rmak i\xE7in bu
-    bilgiyi kullanabiliriz. \n\n{1}\n\nStateler\nOyun statelerini de\u011Fi\u015Ftirmek
-    i\xE7in GameController \xF6\u011Fesinin nesnesinden ChangeState metodu kullan\u0131lmal\u0131d\u0131r.
-    (_gameController.ChangeState(GameStates state);\n\nGameStates i\xE7erisinde bulunan
-    stateler:\n\tLoading: Oyun veya herhangi bir level y\xFCklenirken olu\u015Fan
-    statedir. Bu state i\xE7erisinde Loading screen \xE7al\u0131\u015F\u0131r. \n\tMain:
-    Oyuncu oyunu oynamaya ba\u015Flamadan \xF6nceki ana ekran\u0131n g\xF6sterildi\u011Fi
-    statedir. Bu state i\xE7erisinde ana men\xFC, upgrade butonlar\u0131, tutorial
-    vs. olabilir. \n\tGame: Oyunun oynand\u0131\u011F\u0131 statedir. Oyun i\xE7erisinde
-    \xE7al\u0131\u015Fan b\xFCt\xFCn i\u015Flemler (movement, pathfollow vs.) bu
-    statede ger\xE7ekle\u015Fir.\n\tEnd: Oyunun biti\u015F ekran\u0131d\u0131r. Bu
-    state yine GameController i\xE7erisinde bulunan EndState() fonksiyonuyla \xE7a\u011F\u0131r\u0131labilir.
-    Bu metod oyuncunun b\xF6l\xFCm\xFC ba\u015Far\u0131l\u0131 bir \u015Fekilde tamamlay\u0131p
-    tamamlamad\u0131\u011F\u0131n\u0131 isPlayerWin parametresiyle al\u0131r ve WinScreen
-    veya LoseScreen \xF6\u011Felerinden uygun olan\u0131 ekrana yans\u0131t\u0131r."
+  shortDescription: 'The ''Game Controller'' element controls the flow of the game
+    and is essentially inspired by the ''state'' design pattern. It runs the ''update''
+    functions of all controllers in the scene, taking into account the specified
+    order and the state of the game. It also manages in-game state changes and events
+    that occur during these changes.
+
+'
+  fullDescription: 'The ''Game Controller'' element controls the flow of the game
+    and is essentially inspired by the ''state'' design pattern. It runs the ''update''
+    functions of all controllers in the scene, taking into account the specified
+    order and the state of the game. It also manages in-game state changes and events
+    that occur during these changes. The controllers that the ''Game Controller''
+    component wants to run are dragged and dropped onto the ''Game Controller'' component
+    via the editor. If you want the controller to automatically map and call all
+    controllers in the scene, you can check the ''autoMapControllers'' box in the
+    editor window. In this way, the ''Game Controller'' will display all classes
+    on the stage that are created by inheriting from the ''Controller Base'' class.
+
+
+    {0}
+
+
+    The
+    functions that are defined in the ''Controller Base'' class will be mapped and
+    managed by the ''Game Controller''. Since the ''Game Controller'' works like
+    a ''State Machine'', it sends the ''Current State'' variable as a parameter to
+    the functions to be used and allows the functions to perform the desired operations
+    in desired situations.
+
+    To add events during state changes, you can add them
+    to the ''onStateChange'' events in the ''Game Controller'' component. The method
+    to be added here must take a parameter from the ''Game States'' enum. This information
+    can be used to run the code if the desired state is reached during state change.
+
+
+
+    {1}
+
+
+    To
+    change game states, you should use the ChangeState method from the object of
+    the ''Game Controller'' element (_gameController.ChangeState(GameStates state)).
+
+    Statuses
+    included in ''Game States'':
+
+    Main: Showing the main screen before the player
+    starts playing the game. In this case, the main menu, development buttons, training,
+    etc. could be included.
+
+    Game: The state in which the game is played. All
+    processes running in the game, such as ''movement'' and ''path follow'', occur
+    in this case.
+
+    End: It is the end screen of the game. This situation is again
+    in the ''Game Controller'', and it can be called with the EndState() function.
+    This method takes the ''isPlayerWin'' parameter whether the player has successfully
+    completed the level and displays the appropriate ''Win Screen'' or ''Lose Screen''
+    on the screen.
+
+'
   subPages: []
   images:
   - {fileID: 2800000, guid: c80e39c3daf55425385b1830fa0f4bbe, type: 3}
