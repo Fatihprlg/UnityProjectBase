@@ -8,8 +8,8 @@ public class DataModel
 {
     protected virtual void Save(object data)
     {
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = new FileStream(Application.persistentDataPath + "/" + GetType().Name + ".dat",
+        BinaryFormatter bf = new ();
+        FileStream file = new (Application.persistentDataPath + "/" + GetType().Name + ".dat",
             FileMode.Create, FileAccess.Write, FileShare.None);
         bf.Serialize(file, data);
         file.Close();
@@ -34,8 +34,8 @@ public class DataModel
         string path = Application.persistentDataPath + "/" + GetType().Name + ".dat";
         if (File.Exists(path))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = new FileStream(Application.persistentDataPath + "/" + GetType().Name + ".dat",
+            BinaryFormatter bf = new ();
+            FileStream file = new (Application.persistentDataPath + "/" + GetType().Name + ".dat",
                 FileMode.Open, FileAccess.Read, FileShare.None);
             if (!(file.CanSeek && file.Length == 0L))
             {

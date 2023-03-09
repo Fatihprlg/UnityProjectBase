@@ -6,6 +6,7 @@ public class BuilderEditor : Editor
 {
     private Builder builder;
     private GUIContent mapClassesContent;
+    private static bool showMappedClasses;
 
     private void OnEnable()
     {
@@ -24,22 +25,25 @@ public class BuilderEditor : Editor
         }
 
         EditorUtils.DrawUILine(Color.white);
-        GUILayout.Label("Classes on Scene");
         GUILayout.Space(5);
-        if (builder.classes != null)
-            for (int index = 0; index < builder.classes.Count; index++)
-            {
-                ClassInfo @class = builder.classes[index];
-                GUIContent name = new ((index + 1) + ". " + @class.implementation.GetType().Name);
-                if (GUILayout.Button(name,
-                        EditorStyles.linkLabel))
+        //GUILayout.Label("Classes on Scene");
+        showMappedClasses = EditorGUILayout.Foldout(showMappedClasses, "Mapped Classes");
+        if (showMappedClasses)
+            if (builder.classes != null)
+                for (int index = 0; index < builder.classes.Count; index++)
                 {
-                    Selection.SetActiveObjectWithContext(@class.implementation, null);
+                    ClassInfo @class = builder.classes[index];
+                    GUIContent name = new((index + 1) + ". " + @class.implementation.GetType().Name);
+                    if (GUILayout.Button(name,
+                            EditorStyles.linkLabel))
+                    {
+                        Selection.SetActiveObjectWithContext(@class.implementation, null);
+                    }
+
+                    Rect rect = GUILayoutUtility.GetLastRect();
+                    rect.width = EditorStyles.linkLabel.CalcSize(name).x;
+                    EditorGUIUtility.AddCursorRect(rect, MouseCursor.Link);
                 }
-                Rect rect = GUILayoutUtility.GetLastRect();
-                rect.width = EditorStyles.linkLabel.CalcSize(name).x;
-                EditorGUIUtility.AddCursorRect(rect, MouseCursor.Link);
-            }
 
         EditorUtils.DrawUILine(Color.white);
         EditorGUILayout.EndVertical();

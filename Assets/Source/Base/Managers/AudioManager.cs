@@ -7,42 +7,44 @@ using DG.Tweening;
 
 public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject, IInitializable
 {
-    public bool IsAudioOn => isAudioOn;
-    [SerializeField] Audios audios;
-    [SerializeField] AudioSource sfxStandartSource, sfxInreasingSource, musicSource;
+    public bool IsAudioOn { get; private set; }
+    [SerializeField] private Audios audios;
+    [SerializeField] private AudioSource sfxStandardSource, musicSource;
     private AudioModel currentMusic;
-    bool isAudioOn;
-    [Range(0, 1)] float volumeMutliplier;
+    [Range(0, 1)] private float volumeMultiplier;
 
     public void Initialize()
     {
-        base.Initialize();
-        isAudioOn = SettingsDataModel.Data.isAudioOn;
-        volumeMutliplier = SettingsDataModel.Data.audioVolume;
+        destroyGameObjectOnDuplicate = true;
+        base.Init();
+        if(destroyed) return;
+        HandleDontDestroy();
+        IsAudioOn = SettingsDataModel.Data.isAudioOn;
+        volumeMultiplier = SettingsDataModel.Data.audioVolume;
     }
 
     public void SetAudioState(bool state)
     {
-        isAudioOn = state;
-        SettingsDataModel.Data.isAudioOn = isAudioOn;
+        IsAudioOn = state;
+        SettingsDataModel.Data.isAudioOn = IsAudioOn;
     }
 
     public void SetVolume(float volume)
     {
         volume = Mathf.Clamp01(volume);
-        volumeMutliplier = volume;
-        SettingsDataModel.Data.audioVolume = volumeMutliplier;
+        volumeMultiplier = volume;
+        SettingsDataModel.Data.audioVolume = volumeMultiplier;
     }
 
-    public void PlayMusic(string name, bool fadeOut = true, float fadeTime = 1f)
+    public void PlayMusic(string name, bool fadeOut = false, float fadeTime = 1f)
     {
-        var music = audios.Musics.FirstOrDefault(x => x.name == name);
+        AudioModel music = audios.Musics.FirstOrDefault(x => x.name == name);
         PlayMusic(music, fadeOut, fadeTime);
     }
 
-    public void PlayMusic(int id, bool fadeOut = true, float fadeTime = 1f)
+    public void PlayMusic(int id, bool fadeOut = false, float fadeTime = 1f)
     {
-        var music = audios.Musics.FirstOrDefault(x => x.id == id);
+        AudioModel music = audios.Musics.FirstOrDefault(x => x.id == id);
         PlayMusic(music, fadeOut, fadeTime);
     }
 
@@ -60,17 +62,17 @@ public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject, IIni
 
     private void PlaySFX(AudioModel sfx)
     {
-        if(!isAudioOn) return;
+        if(!IsAudioOn) return;
         if (sfx != null)
         {
-            sfxStandartSource.pitch = sfx.pitch;
-            sfxStandartSource.PlayOneShot(sfx.clip, sfx.volume * volumeMutliplier);
+            sfxStandardSource.pitch = sfx.pitch;
+            sfxStandardSource.PlayOneShot(sfx.clip, sfx.volume * volumeMultiplier);
         }
     }
 
     private void PlayMusic(AudioModel music, bool fadeOut, float fadeTime)
     {
-        if(!isAudioOn) return;
+        if(!IsAudioOn) return;
         if (fadeOut)
         {
             StartCoroutine(BlendMusics(currentMusic, music, fadeTime));
@@ -80,7 +82,7 @@ public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject, IIni
             currentMusic = music;
             musicSource.clip = music.clip;
             musicSource.pitch = music.pitch;
-            musicSource.volume = music.volume * volumeMutliplier;
+            musicSource.volume = music.volume * volumeMultiplier;
             musicSource.loop = true;
             musicSource.Play();
         }
@@ -91,8 +93,8 @@ public class AudioManager : MonoSingleton<AudioManager>, ICrossSceneObject, IIni
         yield return null;
 
         int loopCount = Mathf.FloorToInt(time / 0.1f);
-        float firstVolDecreaseAmt = -(first.volume * volumeMutliplier * 2) / loopCount;
-        float secondVolIncrAmt = (second.volume * volumeMutliplier * 2) / loopCount;
+        float firstVolDecreaseAmt = -(first.volume * volumeMultiplier * 2) / loopCount;
+        float secondVolIncrAmt = (second.volume * volumeMultiplier * 2) / loopCount;
         float volDelta = firstVolDecreaseAmt;
         while (loopCount > 0)
         {

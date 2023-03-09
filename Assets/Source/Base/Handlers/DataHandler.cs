@@ -22,7 +22,7 @@ public class DataHandler : MonoBehaviour, IInitializable
         isInitialized = true;
     }
 
-    public void ClearAllData()
+    internal void ClearAllData()
     {
         string[] files = Directory.GetFiles(Application.persistentDataPath, "*.dat");
         for (int i = 0; i < files.Length; i++)

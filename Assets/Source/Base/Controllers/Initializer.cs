@@ -36,4 +36,9 @@ public class Initializer : MonoBehaviour
             item.Initialize();
         }
     }
+
+    public void InsertInitializableObject(GameObject instantiatedObj)
+    {
+        initializableObjects = initializableObjects.Insert(0, instantiatedObj);
+    }
 }

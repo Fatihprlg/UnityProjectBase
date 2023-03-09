@@ -76,8 +76,8 @@ public class DataHandlerWindow : EditorWindow
         if (DataName != null && !char.IsNumber(DataName.ToCharArray().ElementAt(0)) && regexItem.IsMatch(DataName))
         {
             DataName = DataName.Replace(" ", "");
-            string targetPath = Application.dataPath + "/Source/Base/Models/DataModels/" + DataName + ".cs";
-            string sampleDataModelPath = Application.dataPath + "/Source/Base/Models/DataModels/SampleDataModel.cs";
+            string targetPath = Application.dataPath + Constants.Strings.NEW_DATA_MODEL_PATH + DataName + ".cs";
+            string sampleDataModelPath = Application.dataPath + Constants.Strings.SAMPLE_DATA_MODEL_PATH;
             string sampleDataModelText = File.ReadAllText(sampleDataModelPath);
             sampleDataModelText = sampleDataModelText.Replace("SampleDataModel", DataName);
             

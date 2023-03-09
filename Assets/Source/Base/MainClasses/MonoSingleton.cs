@@ -5,7 +5,7 @@ using UnityEngine;
 /// Mono singleton Class. Extend this class to make singleton component.
 /// Example: 
 /// <code>
-/// public class Foo : MonoSingleton<Foo>
+/// public class Foo : MonoSingleton &lt;Foo&gt;
 /// </code>. To get the instance of Foo class, use <code>Foo.instance</code>
 /// Override <code>Init()</code> method instead of using <code>Awake()</code>
 /// from this class.
@@ -23,7 +23,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
     {
         get
         {
-            // Instance requiered for the first time, we look for it
+            // Instance required for the first time, we look for it
             if (MInstance == null)
             {
                 MInstance = GameObject.FindObjectOfType(typeof(T)) as T;
@@ -31,22 +31,22 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
                 // Object not found, we create a temporary one
                 if (MInstance == null)
                 {
-                    Debug.LogWarning("No instance of " + typeof(T).ToString() + ", a temporary one is created.");
+                    Debug.LogWarning("No instance of " + typeof(T) + ", a temporary one is created.");
 
                     IsTemporaryInstance = true;
-                    MInstance = new GameObject("Temp Instance of " + typeof(T).ToString(), typeof(T)).GetComponent<T>();
+                    MInstance = new GameObject("Temp Instance of " + typeof(T), typeof(T)).GetComponent<T>();
 
                     // Problem during the creation, this should not happen
                     if (MInstance == null)
                     {
-                        Debug.LogError("Problem during the creation of " + typeof(T).ToString());
+                        Debug.LogError("Problem during the creation of " + typeof(T));
                     }
                 }
 
                 if (!IsInitialized)
                 {
                     IsInitialized = true;
-                    MInstance.Initialize();
+                    MInstance.Init();
                 }
             }
 
@@ -58,10 +58,10 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
     // executing before this one, no need to search the object.
     private void Awake()
     {
-        Initialize();
+        Init();
     }
 
-    public void Initialize()
+    public void Init()
     {
         if (MInstance == null)
         {
@@ -78,7 +78,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
         if (!IsInitialized)
         {
             IsInitialized = true;
-            MInstance.Initialize();
+            MInstance.Init();
         }
     }
 

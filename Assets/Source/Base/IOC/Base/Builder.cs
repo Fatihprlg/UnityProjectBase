@@ -1,24 +1,23 @@
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 #if UNITY_EDITOR
-using System.Reflection;
 using UnityEditor;
-using UnityEngine.Rendering;
-
 #endif
 
 public class Builder : MonoBehaviour, IBuilder
 {
     public List<ClassInfo> classes { get; private set; }
-
+    [SerializeField, HideInInspector] private IOCIncludedAssemblies assemblies;
+    
     public void Build(Container container)
     {
         if (classes == null || classes.Count < 1) MapClasses();
-        foreach (var item in classes)
+        foreach (ClassInfo item in classes)
         {
             if (item.implementation == null) continue;
-            var type = item.implementation.GetType();
+            Type type = item.implementation.GetType();
             container.Register(type.BaseType, type, item);
         }
     }
@@ -28,6 +27,8 @@ public class Builder : MonoBehaviour, IBuilder
     {
         AssemblyReloadEvents.afterAssemblyReload -= MapClasses;
         AssemblyReloadEvents.afterAssemblyReload += MapClasses;
+        if(assemblies is null)
+            assemblies = AssetDatabase.LoadAssetAtPath<IOCIncludedAssemblies>(Constants.Strings.IOC_INCLUDED_ASM_PATH);
     }
 #endif
 
@@ -36,10 +37,10 @@ public class Builder : MonoBehaviour, IBuilder
         classes = new List<ClassInfo>();
         classes.Clear();
         var monos = FindObjectsOfType<MonoBehaviour>(true);
-        foreach (var mono in monos)
+        foreach (MonoBehaviour mono in monos)
         {
             if (mono == null) continue;
-            if(mono.GetType().Assembly != Assembly.GetAssembly(GetType())) continue;
+            if(!assemblies.Assemblies.Exists(asm => mono.GetType().Assembly.GetName().Name ==  asm)) continue;
             ClassInfo info = new()
             {
                 implementation = mono,

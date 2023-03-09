@@ -5,9 +5,8 @@ using MoreMountains.NiceVibrations;
 
 public class VibrationManager : IInitializable
 {
-    public static bool IsVibrationOn => isVibrationOn;
-    static float lastVibrationTime;
-    static bool isVibrationOn;
+    public static bool IsVibrationOn { get; private set; }
+    private static float lastVibrationTime;
 
     public VibrationManager()
     {
@@ -15,18 +14,18 @@ public class VibrationManager : IInitializable
     }
     public void Initialize()
     {
-        isVibrationOn = SettingsDataModel.Data.isVibrationOn;
+        IsVibrationOn = SettingsDataModel.Data.isVibrationOn;
     }
 
     public static void SetVibrationState(bool state)
     {
-        isVibrationOn = state;
-        SettingsDataModel.Data.isVibrationOn = isVibrationOn;
+        IsVibrationOn = state;
+        SettingsDataModel.Data.isVibrationOn = IsVibrationOn;
     }
 
     public static void SetHaptic(VibrationTypes type)
     {
-        if (!isVibrationOn) return;
+        if (!IsVibrationOn) return;
         switch (type)
         {
             case VibrationTypes.Light:
@@ -53,6 +52,7 @@ public class VibrationManager : IInitializable
             case VibrationTypes.Warning:
                 MMVibrationManager.Haptic(HapticTypes.Warning);
                 break;
+            case VibrationTypes.None:
             default:
                 break;
         }
@@ -60,7 +60,7 @@ public class VibrationManager : IInitializable
 
     public static void SetHaptic(VibrationTypes type, float threshold)
     {
-        if (!isVibrationOn) return;
+        if (!IsVibrationOn) return;
         if (Time.time < lastVibrationTime + threshold)
             return;
         lastVibrationTime = Time.time;

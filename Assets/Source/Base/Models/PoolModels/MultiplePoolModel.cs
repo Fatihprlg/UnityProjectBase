@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiplePoolModel : MonoBehaviour
+public sealed class MultiplePoolModel : MonoBehaviour
 {
-    [SerializeField] List<PoolModel> pools;
+    [SerializeField] private List<PoolModel> pools;
 
-    public virtual T GetDeactiveItem<T>(int poolIndex)
+    public T GetDeactiveItem<T>(int poolIndex)
     {
         return pools[poolIndex].GetDeactiveItem<T>();
     }
 
-    public virtual T GetRandomPoolItem<T>()
+    public T GetRandomPoolItem<T>()
     {
         return pools.GetRandom().GetDeactiveItem<T>();
     }

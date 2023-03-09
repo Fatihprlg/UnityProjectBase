@@ -7,20 +7,16 @@ public class CurrencyManager : MonoSingleton<CurrencyManager>, ICrossSceneObject
     public UnityAction OnCurrencyUpdate;
     public int CurrencyAmount
     {
-        get
-        {
-            return data.Currency;
-        }
-        set
-        {
-            data.Currency = value;
-        }
+        get => data.Currency;
+        set => data.Currency = value;
     }
     private PlayerDataModel data;
     
     public void Initialize()
     {
-        base.Initialize();
+        destroyGameObjectOnDuplicate = true;
+        base.Init();
+        if(destroyed) return;
         HandleDontDestroy();
         data = PlayerDataModel.Data;
         

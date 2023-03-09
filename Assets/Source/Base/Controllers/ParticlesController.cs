@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ParticlesController : ControllerBase
 {
-    static ParticlesController instance;
-    [SerializeField] ParticlePoolModel[] particlePools;
+    private static ParticlesController instance;
+    [SerializeField] private ParticlePoolModel[] particlePools;
 
     public override void Initialize()
     {

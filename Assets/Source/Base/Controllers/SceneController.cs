@@ -10,15 +10,15 @@ public class SceneController : MonoSingleton<SceneController>, ICrossSceneObject
     public SceneModel CurrentScene => currentScene;
     public UnityEvent<SceneModel> OnSceneLoad;
     public UnityEvent<SceneModel> OnSceneUnload;
-    [SerializeField] private SceneModel[] scenes;
     [SerializeField] private SceneModel mainScene;
     [Dependency, SerializeField] private SceneLoadingViewModel loadingScreen;
+    [SerializeField] private SceneModel[] scenes;
     private SceneModel currentScene;
     
     public void Initialize()
     {
         destroyGameObjectOnDuplicate = true;
-        base.Initialize();
+        base.Init();
         if(destroyed) return;
         this.Inject();
         HandleDontDestroy();
@@ -58,7 +58,7 @@ public class SceneController : MonoSingleton<SceneController>, ICrossSceneObject
         });
         loadingScreen.Show();
         OnSceneUnload?.Invoke(currentScene);
-        AsyncOperation operation = SceneManager.LoadSceneAsync(scene.name);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scene.sceneField);
         operation.allowSceneActivation = false;
         while (!operation.isDone)
         {

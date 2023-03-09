@@ -1,4 +1,6 @@
-﻿namespace Helpers
+﻿using System;
+
+namespace Helpers
 {
     using System.Collections;
     using System.Collections.Generic;
@@ -269,6 +271,16 @@
 
     public static class String
     {
+        public static string GetRightPartOfPath(string path, string after)
+        {
+            var parts = path.Split(System.IO.Path.DirectorySeparatorChar);
+            int afterIndex = Array.IndexOf(parts, after);
+
+            if (afterIndex == -1) return null;
+
+            return string.Join(System.IO.Path.DirectorySeparatorChar.ToString(),
+                parts, afterIndex, parts.Length - afterIndex);
+        }
         public static string SortArray(object[] values, char seperationChar)
         {
             string newText = "";
@@ -384,14 +396,7 @@
 
         public static bool IsValueInRange(float value, float min, float max)
         {
-            if (value >= min && value <= max)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return value >= min && value <= max;
         }
 
         public static Vector3 CalculateCubicBezierPoint(float time, Vector3 startPoint, Vector3 controlPoint1, Vector3 controlPoint2, Vector3 endPoint)
@@ -466,7 +471,7 @@
                 }
 
             }
-            else if (targetAngle == angle)
+            else if (Mathf.Approximately(targetAngle, angle))
             {
                 return true;
             }
@@ -736,12 +741,12 @@
             return list;
         }
 
-        public static List<T> Shufflelist<T>(List<T> targetList)
+        public static List<T> ShuffleList<T>(List<T> targetList)
         {
             System.Random r = new System.Random();
             for (int i = 0; i < targetList.Count; i++)
             {
-                var obj = targetList[i];
+                T obj = targetList[i];
                 targetList.Remove(obj);
                 int index = r.Next(0, targetList.Count);
                 targetList.Insert(index, obj);
@@ -756,7 +761,7 @@
 
             for (int i = 0; i < count; i++)
             {
-                var last = list[count - 1];
+                T last = list[count - 1];
                 list.Remove(last);
                 list.Insert(i, last);
             }
@@ -785,7 +790,7 @@
 
         public static bool IsEqual(Color a, Color b)
         {
-            return a.r == b.r && a.g == b.g && a.b == b.b;
+            return Mathf.Approximately(a.r, b.r) && Mathf.Approximately(a.g, b.g) && Mathf.Approximately(a.b, b.b);
         }
 
         public static Color InvertColor(Color color)
@@ -795,13 +800,12 @@
 
         public static Color ToColor(string str)
         {
-            if (str.Contains("#") == false)
+            if (!str.Contains("#"))
             {
                 str = "#" + str;
             }
 
-            Color color;
-            ColorUtility.TryParseHtmlString(str, out color);
+            ColorUtility.TryParseHtmlString(str, out Color color);
             return color;
         }
 
@@ -818,9 +822,9 @@
             return alphaColor;
         }
 
-        public static bool IsColorInRange(float sensitve, Color color, Color targetColor)
+        public static bool IsColorInRange(float sensitive, Color color, Color targetColor)
         {
-            return Maths.IsValueInRange(color.r, targetColor.r - sensitve, targetColor.r + sensitve) && Maths.IsValueInRange(color.g, targetColor.g - sensitve, targetColor.g + sensitve) && Maths.IsValueInRange(color.b, targetColor.b - sensitve, targetColor.b + sensitve);
+            return Maths.IsValueInRange(color.r, targetColor.r - sensitive, targetColor.r + sensitive) && Maths.IsValueInRange(color.g, targetColor.g - sensitive, targetColor.g + sensitive) && Maths.IsValueInRange(color.b, targetColor.b - sensitive, targetColor.b + sensitive);
         }
 
     }
@@ -1117,8 +1121,7 @@
         public static RaycastHit GetScreenToRaycastHit(Camera camera, Vector3 screenPos, float maxdistance)
         {
             Ray ray = camera.ScreenPointToRay(screenPos);
-            RaycastHit hit;
-            Physics.Raycast(ray, out hit, maxdistance);
+            Physics.Raycast(ray, out RaycastHit hit, maxdistance);
 
             return hit;
         }

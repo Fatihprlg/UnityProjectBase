@@ -9,9 +9,10 @@ public class Context : MonoBehaviour, IContext, IInitializable
     protected Container container;
     public void Initialize()
     {
-        container = new();
+        container = new Container();
         if (mainBuilder == null) CreateBuilder();
         mainBuilder.Build(container);
+        
         IOCExtensions.SetDependencyInjector(container);
     }
 

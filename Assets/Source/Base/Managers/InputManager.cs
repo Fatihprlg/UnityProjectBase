@@ -9,14 +9,9 @@ public class InputManager
     public Vector2 PointerPosition;
     public Vector2 PointerUpPosition;
 
-    public Vector2 DeltaPosition
-    {
-        get
-        {
-            return new Vector2((PointerPosition.x - PointerDownPosition.x) / Screen.width,
-                (PointerPosition.y - PointerDownPosition.y) / Screen.height);
-        }
-    }
+    public Vector2 DeltaPosition =>
+        new ((PointerPosition.x - PointerDownPosition.x) / Screen.width,
+            (PointerPosition.y - PointerDownPosition.y) / Screen.height);
 
     public UnityEvent OnPointerDownEvent;
     public UnityEvent OnPointerEvent;

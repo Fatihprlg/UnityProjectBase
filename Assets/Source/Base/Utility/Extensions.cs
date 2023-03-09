@@ -447,5 +447,12 @@ public static class Extensions
         return list;
     }
 
+    public static T[] Insert<T>(this T[] array, int index, T obj)
+    {
+        var list = array.ToList();
+        list.Insert(0, obj);
+        return list.ToArray();
+    }
+
     #endregion
 }

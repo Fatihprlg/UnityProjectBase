@@ -32,7 +32,7 @@ public class PoolModel : MonoBehaviour
         }
     }
 
-    private void getItemsFromChilds()
+    private void getItemsFromChildren()
     {
         if (items == null)
             items = new List<GameObject>();
@@ -56,7 +56,7 @@ public class PoolModel : MonoBehaviour
         if (items != null)
             items.Clear();
 
-        getItemsFromChilds();
+        getItemsFromChildren();
 #endif
     }
 
